@@ -11,20 +11,71 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*
+* Website Routes
+*/
+	//	All resource routes
+	Route::resource('/', 'HomeController');
+	//	All get routes
 
-Route::get('admin', 'Admin\AdminController@index');
-Route::get('admin/give-role-permissions', 'Admin\AdminController@getGiveRolePermissions');
-Route::post('admin/give-role-permissions', 'Admin\AdminController@postGiveRolePermissions');
-Route::resource('admin/roles', 'Admin\RolesController');
-Route::resource('admin/permissions', 'Admin\PermissionsController');
-Route::resource('admin/users', 'Admin\UsersController');
-Route::get('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
-Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
-Route::resource('admin/episodes', 'Episodes\\episodesController');
+	//	All post routes
+
+
+Route::group(['middleware' => 'auth'], function () {
+    //    Route::get('/link1', function ()    {
+//        // Uses Auth Middleware
+//    });
+
+    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
+    #adminlte_routes
+});
+
+
+/*
+* Admin Routes
+*/
+	Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){
+		Route::get('/', 'HomeController@index')->name('home');
+	});
+	//add prefix in below for adding admin in url
+	Route::group(['namespace' => 'Admin'], function(){
+		//	All get routes
+		Route::get('dashboard', 'HomeController@dashboard')->name('unishop_dashboard');
+		Route::get('home', 'HomeController@index');
+		//	All post routes
+		Route::post('do-login', ["uses" => 'UsersController@dologin', "as" => "do.login"]);
+		Route::post('verify-pickup-code', ["uses" => 'OrdersController@verify_pickupcode', "as" => "verify.pickup.code"]);
+		//	All resource routes
+		Route::resource('roles', 'RolesController');
+		Route::resource('readexcel', 'ExcelController');
+	});
+
+
+/*
+* SuperAdmin Routes
+*/
+	Route::group(['namespace' => 'Superadmin', 'prefix' => 'superadmin'], function(){
+		Route::get('/', 'AdminController@index');
+	});
+	//add prefix in below for adding admin in url
+	Route::group(['namespace' => 'Superadmin'], function(){
+
+		//	All get routes
+		Route::get('give-role-permissions', 'AdminController@getGiveRolePermissions');
+		Route::get('generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
+
+		//	All post routes
+		Route::post('give-role-permissions', 'AdminController@postGiveRolePermissions');		
+		Route::post('generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
+
+		//	All resource routes
+		Route::resource('roles', 'RolesController');
+		Route::resource('permissions', 'PermissionsController');
+		Route::resource('users', 'UsersController');		
+	});
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+

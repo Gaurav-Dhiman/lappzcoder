@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "acacha/admin-lte-template-laravel": "4.*",
         "appzcoder/laravel-admin": "^1.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",

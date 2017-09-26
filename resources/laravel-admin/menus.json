@@ -3,22 +3,22 @@
 		"section": "User Manager",
 		"items": [{
 			"title": "Users",
-			"url": "\/admin\/users"
+			"url": "\/users"
 		}, {
 			"title": "Roles",
-			"url": "\/admin\/roles"
+			"url": "\/roles"
 		}, {
 			"title": "Permissions",
-			"url": "\/admin\/permissions"
+			"url": "\/permissions"
 		}, {
 			"title": "Give Role Permissions",
-			"url": "\/admin\/give-role-permissions"
+			"url": "\/give-role-permissions"
 		}]
 	}, {
 		"section": "Tools",
 		"items": [{
 			"title": "Generator",
-			"url": "\/admin\/generator"
+			"url": "\/generator"
 		}]
 	
 	}]
