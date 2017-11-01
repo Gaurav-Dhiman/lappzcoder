@@ -51,7 +51,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.php"><img src="{{ asset('fron-end-assets/images/logo.jpg') }}" alt=""></a>
+                        <a class="navbar-brand" href="index.php"><img src="{{ asset('front-end-assets/images/logo.jpg') }}" alt=""></a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -117,15 +117,15 @@
      <div class="container">
         <div class="row">
             <div class="col-sm-4 col-md-4 col-xs-12">
-                <img src="{{ asset('fron-end-assets/images/schooling.jpg') }}" alt="#">
+                <img src="{{ asset('front-end-assets/images/schooling.jpg') }}" alt="#">
                 <h2 class="schooling">Schooling <span>  </span></h2>
             </div>
             <div class="col-sm-4 col-md-4 col-xs-12">
-                <img src="{{ asset('fron-end-assets/images/competative.jpg') }}" alt="#">
+                <img src="{{ asset('front-end-assets/images/competative.jpg') }}" alt="#">
                 <h2 class="competative">Competetive <span>  </span></h2>
             </div>
             <div class="col-sm-4 col-md-4 col-xs-12">
-                <img src="{{ asset('fron-end-assets/images/series.jpg') }}" alt="#">
+                <img src="{{ asset('front-end-assets/images/series.jpg') }}" alt="#">
                 <h2 class="series">Test Series <span> </span></h2>
             </div>
         </div>
@@ -143,7 +143,7 @@
                   <div id="owl-demo" class="owl-carousel">
 
                     <div class="item"> <span class="exbox1">
-                        <a href="#"><img src="{{ asset('fron-end-assets/images/vd1.jpg') }}" alt="#">
+                        <a href="#"><img src="{{ asset('front-end-assets/images/vd1.jpg') }}" alt="#">
                             <span class="vedia-text">
                                 <strong class="vdlink" style="background:#1e90c5">VIDEO</strong><br>
                                 <p><strong>6<sup>th</sup> Class<br></strong>
@@ -153,7 +153,7 @@
                         </span></div>
 
                         <div class="item"> <span class="exbox1">
-                            <a href="#"><img src="{{ asset('fron-end-assets/images/vd2.jpg') }}" alt="#">
+                            <a href="#"><img src="{{ asset('front-end-assets/images/vd2.jpg') }}" alt="#">
                                 <span class="vedia-text">
                                     <strong class="vdlink">VIDEO</strong><br>
                                     <p><strong>7<sup>th</sup> Class<br></strong>
@@ -163,7 +163,7 @@
                             </span></div>
 
                             <div class="item"> <span class="exbox1">
-                                <a href="#"><img src="{{ asset('fron-end-assets/images/v3.jpg') }}" alt="#">
+                                <a href="#"><img src="{{ asset('front-end-assets/images/v3.jpg') }}" alt="#">
                                     <span class="vedia-text">
                                         <strong class="vdlink" style="background:#ff7800">VIDEO</strong><br>
                                         <p><strong>8<sup>th</sup> Class<br></strong>
@@ -173,7 +173,7 @@
                                 </span></div>
 
                                 <div class="item"> <span class="exbox1">
-                                    <a href="#"><img src="{{ asset('fron-end-assets/images/vd4.jpg') }}" alt="#">
+                                    <a href="#"><img src="{{ asset('front-end-assets/images/vd4.jpg') }}" alt="#">
                                         <span class="vedia-text">
                                             <strong class="vdlink" style="background:#10a17d">VIDEO</strong><br>
                                             <p><strong>9<sup>th</sup> Class<br></strong>
@@ -183,7 +183,7 @@
                                     </span></div>
 
                                     <div class="item"> <span class="exbox1">
-                                        <a href="#"><img src="{{ asset('fron-end-assets/images/vd5.jpg') }}" alt="#">
+                                        <a href="#"><img src="{{ asset('front-end-assets/images/vd5.jpg') }}" alt="#">
                                             <span class="vedia-text">
                                                 <strong class="vdlink" style="background:#ed3560">VIDEO</strong><br>
                                                 <p><strong>10<sup>th</sup> Class<br></strong>
@@ -193,7 +193,7 @@
                                         </span></div>
 
                                         <div class="item"> <span class="exbox1">
-                                            <a href="#"><img src="{{ asset('fron-end-assets/images/vd1.jpg') }}" alt="#">
+                                            <a href="#"><img src="{{ asset('front-end-assets/images/vd1.jpg') }}" alt="#">
                                                 <span class="vedia-text">
                                                     <strong class="vdlink" style="background:#1e90c5">VIDEO</strong><br>
                                                     <p><strong>6<sup>th</sup> Class<br></strong>
@@ -203,7 +203,7 @@
                                             </span></div>
 
                                             <div class="item"> <span class="exbox1">
-                                                <a href="#"><img src="{{ asset('fron-end-assets/images/vd2.jpg') }}" alt="#">
+                                                <a href="#"><img src="{{ asset('front-end-assets/images/vd2.jpg') }}" alt="#">
                                                     <span class="vedia-text">
                                                         <strong class="vdlink">VIDEO</strong><br>
                                                         <p><strong>7<sup>th</sup> Class<br></strong>
@@ -213,7 +213,7 @@
                                                 </span></div>
 
                                                 <div class="item"> <span class="exbox1">
-                                                    <a href="#"><img src="{{ asset('fron-end-assets/images/v3.jpg') }}" alt="#">
+                                                    <a href="#"><img src="{{ asset('front-end-assets/images/v3.jpg') }}" alt="#">
                                                         <span class="vedia-text">
                                                             <strong class="vdlink" style="background:#ff7800">VIDEO</strong><br>
                                                             <p><strong>8<sup>th</sup> Class<br></strong>
@@ -223,7 +223,7 @@
                                                     </span></div>
 
                                                     <div class="item"> <span class="exbox1">
-                                                        <a href="#"><img src="{{ asset('fron-end-assets/images/vd4.jpg') }}" alt="#">
+                                                        <a href="#"><img src="{{ asset('front-end-assets/images/vd4.jpg') }}" alt="#">
                                                             <span class="vedia-text">
                                                                 <strong class="vdlink" style="background:#10a17d">VIDEO</strong><br>
                                                                 <p><strong>9<sup>th</sup> Class<br></strong>
@@ -233,7 +233,7 @@
                                                         </span></div>
 
                                                         <div class="item"> <span class="exbox1">
-                                                            <a href="#"><img src="{{ asset('fron-end-assets/images/vd5.jpg') }}" alt="#">
+                                                            <a href="#"><img src="{{ asset('front-end-assets/images/vd5.jpg') }}" alt="#">
                                                                 <span class="vedia-text">
                                                                     <strong class="vdlink" style="background:#ed3560">VIDEO</strong><br>
                                                                     <p><strong>10<sup>th</sup> Class<br></strong>
@@ -264,7 +264,7 @@
                                             <h2 class="heading">Latest Video Lecture</h2>
                                             <div class="row"><div class="marquee-with-options">
                                                 <div class="col-sm-3 col-md-3 col-xs-12 UpcomingSessions-box">
-                                                    <span><img src="{{ asset('fron-end-assets/images/first-vd.jpg') }}" alt="#"></span>
+                                                    <span><img src="{{ asset('front-end-assets/images/first-vd.jpg') }}" alt="#"></span>
                                                     <h3>Lorem Ipsum is<br>
                                                         simply dummy text </h3>
                                                         <p>Lorem Ipsum is simply dummy text of<br>
@@ -272,7 +272,7 @@
                                                             <a href="#">Read More</a>
                                                         </div>
                                                         <div class="col-sm-3 col-md-3 col-xs-12 UpcomingSessions-box">
-                                                            <span><img src="{{ asset('fron-end-assets/images/sec-vd.jpg') }}" alt="#"></span>
+                                                            <span><img src="{{ asset('front-end-assets/images/sec-vd.jpg') }}" alt="#"></span>
                                                             <h3>Lorem Ipsum is<br>
                                                                 simply dummy text </h3>
                                                                 <p>Lorem Ipsum is simply dummy text of<br>
@@ -280,7 +280,7 @@
                                                                     <a href="#">Read More</a>
                                                                 </div>
                                                                 <div class="col-sm-3 col-md-3 col-xs-12 UpcomingSessions-box">
-                                                                    <span><img src="{{ asset('fron-end-assets/images/third-vd.jpg') }}" alt="#"></span>
+                                                                    <span><img src="{{ asset('front-end-assets/images/third-vd.jpg') }}" alt="#"></span>
                                                                     <h3>Lorem Ipsum is<br>
                                                                         simply dummy text </h3>
                                                                         <p>Lorem Ipsum is simply dummy text of<br>
@@ -288,7 +288,7 @@
                                                                             <a href="#">Read More</a>
                                                                         </div>
                                                                         <div class="col-sm-3 col-md-3 col-xs-12 UpcomingSessions-box">
-                                                                            <span><img src="{{ asset('fron-end-assets/images/forth-vd.jpg') }}" alt="#"></span>
+                                                                            <span><img src="{{ asset('front-end-assets/images/forth-vd.jpg') }}" alt="#"></span>
                                                                             <h3>Lorem Ipsum is<br>
                                                                                 simply dummy text </h3>
                                                                                 <p>Lorem Ipsum is simply dummy text of<br>
@@ -305,7 +305,7 @@
                                                                             <div class="row">
                                                                                 <div class="whtbg">
                                                                                     <div class="col-sm-8 col-md-8 col-xs-12" style="padding-left:0;">
-                                                                                        <img src="{{ asset('fron-end-assets/images/upcom-evt.jpg') }}" alt="#">
+                                                                                        <img src="{{ asset('front-end-assets/images/upcom-evt.jpg') }}" alt="#">
 
                                                                                     </div>
                                                                                     <div class="col-sm-4 col-md-4 col-xs-12">
@@ -329,16 +329,16 @@
                                                                                                   <div id="owl-demo1" class="owl-carousel" style="position:relative">
 
                                                                                                     <div class="item">
-                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('fron-end-assets/images/blog1.jpg') }}"></div>
-                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('fron-end-assets/images/blog2.jpg') }}"></div>
-                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('fron-end-assets/images/blog3.jpg') }}"></div>
-                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('fron-end-assets/images/blog4.jpg') }}"></div>
+                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('front-end-assets/images/blog1.jpg') }}"></div>
+                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('front-end-assets/images/blog2.jpg') }}"></div>
+                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('front-end-assets/images/blog3.jpg') }}"></div>
+                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('front-end-assets/images/blog4.jpg') }}"></div>
                                                                                                     </div>
                                                                                                     <div class="item">
-                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('fron-end-assets/images/blog1.jpg') }}"></div>
-                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('fron-end-assets/images/blog2.jpg') }}"></div>
-                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('fron-end-assets/images/blog3.jpg') }}"></div>
-                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('fron-end-assets/images/blog4.jpg') }}"></div>
+                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('front-end-assets/images/blog1.jpg') }}"></div>
+                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('front-end-assets/images/blog2.jpg') }}"></div>
+                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('front-end-assets/images/blog3.jpg') }}"></div>
+                                                                                                        <div class="col-sm-3 col-xs-12 col-md-3"><img src="{{ asset('front-end-assets/images/blog4.jpg') }}"></div>
                                                                                                     </div></div>
                                                                                                     <div class="customNavigation">
                                                                                                         <a class="btn prev1 fa fa-angle-left"></a>
@@ -368,42 +368,42 @@
                                                                                                                        <div class="othersaybox-main">
                                                                                                                            <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
                                                                                                                             the printing and typesetting industry. </p>
-                                                                                                                            <h3><img src="{{ asset('fron-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
+                                                                                                                            <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
                                                                                                                             <a href="#">Vice President - Business Development</a></div>
                                                                                                                         </li>
                                                                                                                         <li>
                                                                                                                            <div class="othersaybox-main">
                                                                                                                                <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
                                                                                                                                 the printing and typesetting industry. </p>
-                                                                                                                                <h3><img src="{{ asset('fron-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
+                                                                                                                                <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
                                                                                                                                 <a href="#">Vice President - Business Development</a></div>
                                                                                                                             </li>
                                                                                                                             <li>
                                                                                                                                <div class="othersaybox-main">
                                                                                                                                    <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
                                                                                                                                     the printing and typesetting industry. </p>
-                                                                                                                                    <h3><img src="{{ asset('fron-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
+                                                                                                                                    <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
                                                                                                                                     <a href="#">Vice President - Business Development</a></div>
                                                                                                                                 </li>
                                                                                                                                 <li>
                                                                                                                                    <div class="othersaybox-main">
                                                                                                                                        <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
                                                                                                                                         the printing and typesetting industry. </p>
-                                                                                                                                        <h3><img src="{{ asset('fron-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
+                                                                                                                                        <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
                                                                                                                                         <a href="#">Vice President - Business Development</a></div>
                                                                                                                                     </li>
                                                                                                                                     <li>
                                                                                                                                        <div class="othersaybox-main">
                                                                                                                                            <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
                                                                                                                                             the printing and typesetting industry. </p>
-                                                                                                                                            <h3><img src="{{ asset('fron-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
+                                                                                                                                            <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
                                                                                                                                             <a href="#">Vice President - Business Development</a></div>
                                                                                                                                         </li>
                                                                                                                                         <li>
                                                                                                                                            <div class="othersaybox-main">
                                                                                                                                                <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
                                                                                                                                                 the printing and typesetting industry. </p>
-                                                                                                                                                <h3><img src="{{ asset('fron-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
+                                                                                                                                                <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel Cliff</h3></div>
                                                                                                                                                 <a href="#">Vice President - Business Development</a></div>
                                                                                                                                             </li>
 
@@ -450,7 +450,7 @@
                                                                                                                                 <div class="col-lg-6 col-sm-6 col-xs-12 col-md-6 text-right">
                                                                                                                                     <h3 style="padding:0 116px 10px 0">News</h3>
                                                                                                                                     <ul>
-                                                                                                                                        <li><img src="{{ asset('fron-end-assets/images/footer-social.jpg') }}"></li>
+                                                                                                                                        <li><img src="{{ asset('front-end-assets/images/footer-social.jpg') }}"></li>
 
                                                                                                                                     </ul>
                                                                                                                                 </div>
@@ -464,25 +464,25 @@
                                                                                                                             <div class="row">
                                                                                                                                 <div class="col-sm-12 col-md-12 col-xs-12 text-center" style="border-bottom:1px solid #ddd;padding:20px 0">
                                                                                                                                     <h2 style="font-size:18px;color:#333;padding:10px 0">Stay Connected with GuruGyanMantra</h2>
-                                                                                                                                    <img src="{{ asset('fron-end-assets/images/gplaystore.png') }}" alt="#">
-                                                                                                                                    <img src="{{ asset('fron-end-assets/images/app-store.png') }}" alt="#">
+                                                                                                                                    <img src="{{ asset('front-end-assets/images/gplaystore.png') }}" alt="#">
+                                                                                                                                    <img src="{{ asset('front-end-assets/images/app-store.png') }}" alt="#">
                                                                                                                                 </div>
                                                                                                                                 <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 text-center">
                                                                                                                                     <p>Copyright © 2017 all rights reserved. guru gyan mantra</p></div></div>
                                                                                                                                 </div>
                                                                                                                                 <!-- jQuery -->
-                                                                                                                                <script src="{{ asset('fron-end-assets/js/jquery.min.js') }}"></script>
+                                                                                                                                <script src="{{ asset('front-end-assets/js/jquery.min.js') }}"></script>
 
-                                                                                                                                <script src="{{ asset('fron-end-assets/js/bootstrap.min.js') }}"></script>
-                                                                                                                                <script src="{{ asset('fron-end-assets/js/bootstrap-hover-dropdown.min.js') }}"></script>
-                                                                                                                                <script type="text/javascript" src="{{ asset('fron-end-assets/js/jquery.jcarousel.min.js') }}"></script>
+                                                                                                                                <script src="{{ asset('front-end-assets/js/bootstrap.min.js') }}"></script>
+                                                                                                                                <script src="{{ asset('front-end-assets/js/bootstrap-hover-dropdown.min.js') }}"></script>
+                                                                                                                                <script type="text/javascript" src="{{ asset('front-end-assets/js/jquery.jcarousel.min.js') }}"></script>
 
-                                                                                                                                <script type="text/javascript" src="{{ asset('fron-end-assets/js/jcarousel.responsive.js') }}"></script>
+                                                                                                                                <script type="text/javascript" src="{{ asset('front-end-assets/js/jcarousel.responsive.js') }}"></script>
 
-                                                                                                                                <script src="{{ asset('fron-end-assets/js/slider.js') }}"></script>
-                                                                                                                                <script src="{{ asset('fron-end-assets/js/slick.js') }}" type="text/javascript" charset="utf-8"></script>
-                                                                                                                                <script src="{{ asset('fron-end-assets/js/jquery.marquee.js') }}" type="text/javascript"></script>
-                                                                                                                                <script src="{{ asset('fron-end-assets/js/marquee.js') }}" type="text/javascript"></script>
+                                                                                                                                <script src="{{ asset('front-end-assets/js/slider.js') }}"></script>
+                                                                                                                                <script src="{{ asset('front-end-assets/js/slick.js') }}" type="text/javascript" charset="utf-8"></script>
+                                                                                                                                <script src="{{ asset('front-end-assets/js/jquery.marquee.js') }}" type="text/javascript"></script>
+                                                                                                                                <script src="{{ asset('front-end-assets/js/marquee.js') }}" type="text/javascript"></script>
 
 
                                                                                                                                 <script>
