@@ -33,7 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        dd("WEBSITE HOME PAGE");
-        // return view('adminlte::home');
+        #return view('adminlte::home');
+        return view('front-end.home');
     }
 }
