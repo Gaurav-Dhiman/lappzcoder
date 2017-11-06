@@ -16,11 +16,17 @@ Auth::routes();
 /*
 * Website Routes
 */
-	//	All resource routes
-	Route::resource('/', 'HomeController');
+	//	All resource routesfront_about_us
+	Route::get('/', 'HomeController@index')->name('front_home');
 	//	All get routes
-
-	//	All post routes
+    Route::get('/about_us', 'StaticPagesController@about_us')->name('front_about_us');
+    Route::get('/user_login', 'UserAuthController@login')->name('front_login');
+    Route::get('/user_register', 'UserAuthController@register')->name('front_register');
+    Route::get('/contact_us', 'ContactUsController@form')->name('front_contact_us');
+    Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
+    Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('course_detail');
+    Route::get('/videos/{chapter_id}', 'ChallengeController@videos')->name('videos');
+	// All post routes
 
 
 Route::group(['middleware' => 'auth'], function () {
