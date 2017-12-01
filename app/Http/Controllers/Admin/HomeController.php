@@ -36,4 +36,9 @@ class HomeController extends Controller
     {
         return view('adminlte::home');
     }
+
+    public function dashboard()
+    {
+        return "Hello";
+    }
 }
