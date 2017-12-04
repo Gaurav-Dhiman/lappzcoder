@@ -23,9 +23,14 @@
             </div>
         @endif
 
+        
+
         <div class="login-box-body">
         <p class="login-box-msg"> {{ trans('adminlte_lang::message.siginsession') }} </p>
-
+        <div class="alert alert-danger" id="403_response" style="display:none;">
+            <h4>Error!</h4> 
+            <p>You dont have Permission to access this Page. You will be redirected back to a home Page in <span class="countdown"></span> Seconds</p>
+        </div>
         <login-form name="{{ config('auth.providers.users.field','email') }}"
                     domain="{{ config('auth.defaults.domain','') }}"></login-form>
 

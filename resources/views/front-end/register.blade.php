@@ -42,29 +42,27 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-xs-12 login-page">
                     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h3>Enter your Details</h3></div>
-                    <form class="input-group">
+                    <form action="{{ route('front_register')}}" class="input-group" method="post">
+                        {{csrf_field()}}
                         <div class="col-sm-6 col-xs-6 col-md-6">
                             <input type="text" placeholder="Enter Your Name">
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6">
-                            <input type="text" placeholder="Enter Your Mobile Number">
+                            <input name="name" type="text" placeholder="Enter Your Mobile Number">
                         </div>
                         <div class="col-sm-12 col-xs-12 col-md-12">
-                            <input type="text" placeholder="Enter Your Email Address">
-                        </div>
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <input type="text" placeholder="Enter User Name">
+                            <input name="email" type="email" placeholder="Enter Your Email Address">
                         </div>
 
                         <div class="col-sm-6 col-xs-6 col-md-6">
-                            <input type="text" placeholder="Enter Your Password">
+                            <input name="password" type="password" placeholder="Enter Your Password">
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6">
-                            <input type="text" placeholder="Confirm Your Password">
+                            <input name="cnf_password" type="password" placeholder="Confirm Your Password">
                         </div>
 
                         <div class="col-sm-12 col-md-12 col-xs-12">
-                            <button>Register</button> <button>Login</button>
+                            <button type="submit">Register</button> <button>Login</button>
                         </div>
                     </form>
                 </div>

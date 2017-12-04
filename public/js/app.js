@@ -25006,6 +25006,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           component.redirect(response);
         }, 2500);
       }).catch(function (error) {
+        location.href='/home';
         console.log(_this.trans('adminlte_lang_message.loginerror') + ':' + error);
       });
     },
