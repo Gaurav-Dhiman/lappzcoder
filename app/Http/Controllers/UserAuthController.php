@@ -11,7 +11,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\User;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Session;
 
 class UserAuthController extends Controller
 {
@@ -36,10 +39,12 @@ class UserAuthController extends Controller
 			$user->assignRole(['user']);
 	       
 	        Session::flash('flash_message', 'Welcome !!');
-
+            Auth::loginUsingId($user->id);
 	        return redirect('/home');	
-    	}catch(Illuminate\Database\QueryException $e){
-    		dd($e);
+    	}catch(QueryException $e){
+    	    $login_link = route('front_login');
+            Session::flash('flash_message', "User Already Exists !! Click <a href='$login_link'>here</a> to Login");
+            return back()->withInput();
     	}
     	
     }

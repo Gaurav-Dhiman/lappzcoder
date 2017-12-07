@@ -42,16 +42,20 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-xs-12 login-page">
                     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h3>Enter your Details</h3></div>
+
                     <form action="{{ route('front_register')}}" class="input-group" method="post">
+                        @if(Session::has('flash_message'))
+                            <div class="alert alert-danger"><p>{!! Session::get('flash_message')  !!} </p></div>
+                        @endif
                         {{csrf_field()}}
-                        <div class="col-sm-6 col-xs-6 col-md-6">
-                            <input type="text" placeholder="Enter Your Name">
-                        </div>
-                        <div class="col-sm-6 col-xs-6 col-md-6">
-                            <input name="name" type="text" placeholder="Enter Your Mobile Number">
-                        </div>
                         <div class="col-sm-12 col-xs-12 col-md-12">
-                            <input name="email" type="email" placeholder="Enter Your Email Address">
+                            <input type="text" name="name" placeholder="Enter Your Name" value="{{ old('name') }}">
+                        </div>
+                        <!-- <div class="col-sm-6 col-xs-6 col-md-6">
+                            <input name="mobile" type="text" placeholder="Enter Your Mobile Number">
+                        </div> -->
+                        <div class="col-sm-12 col-xs-12 col-md-12">
+                            <input name="email" type="email" placeholder="Enter Your Email Address" value="{{ old('email') }}">
                         </div>
 
                         <div class="col-sm-6 col-xs-6 col-md-6">
@@ -62,7 +66,7 @@
                         </div>
 
                         <div class="col-sm-12 col-md-12 col-xs-12">
-                            <button type="submit">Register</button> <button>Login</button>
+                            <button type="submit">Register</button>
                         </div>
                     </form>
                 </div>

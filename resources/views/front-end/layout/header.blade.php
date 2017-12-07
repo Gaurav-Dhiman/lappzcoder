@@ -43,9 +43,18 @@
                     <a href="#">Send a Query</a></li>
                 <li class="contactus">
                     <a href="{{ route('front_contact_us') }}">Contact Us</a></li>
+
                 <li class="login">
-                    <button onclick="location.href='{{ route('front_login')}}'" >Login</button>
-                    <button onclick="location.href='{{ route('front_register')}}'" >Register</button>
+                    @if(Auth::guest())
+                        <button onclick="location.href='{{ route('front_login')}}'" >Login</button>
+                        <button onclick="location.href='{{ route('front_register')}}'" >Register</button>
+                    @else
+                        <button onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Logout</button>
+                        <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                            {{csrf_field()}}
+                            <input type="submit" value="logout" style="display: none;">
+                        </form>
+                    @endif
                 </li>
 
                 <!-- <li class="dropdown active">
