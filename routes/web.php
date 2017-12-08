@@ -50,12 +50,14 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'admin_access', 'prefix' =
     //	All get routes
     Route::get('dashboard', 'HomeController@dashboard')->name('unishop_dashboard');
     Route::get('home', 'HomeController@index');
+
+
     //	All post routes
     // Route::post('do-login', ["uses" => 'UsersController@dologin', "as" => "do.login"]);
     // Route::post('verify-pickup-code', ["uses" => 'OrdersController@verify_pickupcode', "as" => "verify.pickup.code"]);
     //	All resource routes
-    // Route::resource('roles', 'RolesController');
-    // Route::resource('readexcel', 'ExcelController');
+    Route::resource('cls', 'ClsController');
+    Route::resource('subjects', 'SubjectsController');
 });
 
 
