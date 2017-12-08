@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
+
 
 class LoginController extends Controller
 {
@@ -38,7 +40,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -48,6 +50,9 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+
+        $this->redirectTo = URL::previous();
+
     }
 
     /**
@@ -86,6 +91,22 @@ class LoginController extends Controller
         return $this->guard()->attempt(
             ['email' => $request->input('username'), 'password' => $request->input('password')],
             $request->has('remember'));
+    }
+
+    /**
+     * The user has been authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function authenticated(Request $request, $user)
+    {
+        $roles = $user->roles->pluck('name')->toArray();
+        if (in_array('admin',$roles)){
+            return redirect(route('home'));
+        }
+        return redirect(route('front_home'));
     }
 
 

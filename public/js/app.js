@@ -25003,10 +25003,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.form.post('/login').then(function (response) {
         var component = _this;
         setTimeout(function () {
-          component.redirect(response);
+            console.log(response);
+            //component.redirect('/admin');
+            location.href = '/admin';
         }, 2500);
       }).catch(function (error) {
-        location.href='/home';
+          $('#login-error p').text("Invalid Credentials !!");
+          $('#login-error').slideDown(500).delay(2000).slideUp(500);
+          $('.login-box .btn-primary').removeAttr('disabled').removeClass('btn-block');
+        // location.href='/home';
         console.log(_this.trans('adminlte_lang_message.loginerror') + ':' + error);
       });
     },
