@@ -1,5 +1,7 @@
 @extends('adminlte::layouts.app')
 
+@section('contentheader_title', 'Classes')
+@section('contentheader_description', 'List Record')
 
 @section('main-content')
     <div class="container">

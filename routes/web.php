@@ -58,6 +58,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'admin_access', 'prefix' =
     //	All resource routes
     Route::resource('cls', 'ClsController');
     Route::resource('subjects', 'SubjectsController');
+    Route::resource('chapters', 'ChaptersController');
 });
 
 
@@ -85,5 +86,4 @@ Route::group(['namespace' => 'Superadmin'], function(){
 });
 
 // Route::get('/home', 'HomeController@index')->name('home');
-
 

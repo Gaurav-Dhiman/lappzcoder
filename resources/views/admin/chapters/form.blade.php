@@ -4,11 +4,11 @@
         {!! Form::text('title', null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('cls_id') ? 'has-error' : ''}}">
-    {!! Form::label('cls_id', 'Class', ['class' => 'col-md-4 control-label']) !!}
+</div><div class="form-group {{ $errors->has('subject_id') ? 'has-error' : ''}}">
+    {!! Form::label('subject_id', 'Subject', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('cls_id', $classes, null, ['class' => 'form-control', 'required' => 'required']) !!}
-        {!! $errors->first('cls_id', '<p class="help-block">:message</p>') !!}
+        {!! Form::select('subject_id', $subjectList,null, ['class' => 'form-control', 'required' => 'required']) !!}
+        {!! $errors->first('subject_id', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 

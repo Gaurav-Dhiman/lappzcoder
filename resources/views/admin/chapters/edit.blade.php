@@ -1,6 +1,7 @@
 @extends('adminlte::layouts.app')
 
-@section('contentheader_title', 'Subjects')
+
+@section('contentheader_title', 'Chapters')
 @section('contentheader_description', 'Update Existing Record')
 
 @section('main-content')
@@ -9,9 +10,9 @@
 
             <div class="col-md-11">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit Subject #{{ $subject->id }}</div>
+                    <div class="panel-heading">Edit Chapter #{{ $chapter->id }}</div>
                     <div class="panel-body">
-                        <a href="{{ url('/admin/subjects') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/chapters') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 
@@ -23,14 +24,14 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($subject, [
+                        {!! Form::model($chapter, [
                             'method' => 'PATCH',
-                            'url' => ['/admin/subjects', $subject->id],
+                            'url' => ['/admin/chapters', $chapter->id],
                             'class' => 'form-horizontal',
                             'files' => true
                         ]) !!}
 
-                        @include ('admin.subjects.form', ['submitButtonText' => 'Update'])
+                        @include ('admin.chapters.form', ['submitButtonText' => 'Update'])
 
                         {!! Form::close() !!}
 

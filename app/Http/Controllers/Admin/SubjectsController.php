@@ -78,8 +78,7 @@ class SubjectsController extends Controller
     public function show($id)
     {
         $subject = Subject::with('cls')->findOrFail($id);
-
-        return view('admin.subjects.show', compact('subject'));
+        return view('admin.subjects.show', compact('subject', 'classes'));
     }
 
     /**
@@ -92,8 +91,8 @@ class SubjectsController extends Controller
     public function edit($id)
     {
         $subject = Subject::findOrFail($id);
-
-        return view('admin.subjects.edit', compact('subject'));
+        $classes = Cl::all()->pluck('title','id');
+        return view('admin.subjects.edit', compact('subject','classes'));
     }
 
     /**
