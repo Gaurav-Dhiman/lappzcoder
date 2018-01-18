@@ -35,24 +35,46 @@
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-th'></i> <span>Classes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-th'></i> <span>Schooling</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('/admin/cls') }}"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="{{ url('/admin/cls/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
+                    <li class="treeview">
+                        <a href="#"><i class='fa fa-th'></i> <span>Classes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ url('/admin/cls') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                            <li><a href="{{ url('/admin/cls/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class='fa fa-th'></i> <span>Subjects</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ url('/admin/subjects') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                            <li><a href="{{ url('/admin/subjects/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class='fa fa-th'></i> <span>Chapters</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ url('/admin/chapters') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                            <li><a href="{{ url('/admin/chapters/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </li>
+
+            <li class="treeview">
+                <a href="#"><i class='fa fa-th'></i> <span>Competetive Exams</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/admin/competetive_exams') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                    <li><a href="{{ url('/admin/competetive_exams/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
                 </ul>
             </li>
+
             <li class="treeview">
-                <a href="#"><i class='fa fa-th'></i> <span>Subjects</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-th'></i> <span>Test Series</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('/admin/subjects') }}"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="{{ url('/admin/subjects/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-th'></i> <span>Chapters</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('/admin/chapters') }}"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="{{ url('/admin/chapters/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
+                    <li><a href="{{ url('/admin/test_series') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                    <li><a href="{{ url('/admin/test_series/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->

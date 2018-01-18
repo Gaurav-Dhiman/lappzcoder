@@ -10,7 +10,7 @@
                     <div class="panel-heading">Generator</div>
                     <div class="panel-body">
 
-                        <form class="form-horizontal" method="post" action="{{ url('/admin/generator') }}">
+                        <form class="form-horizontal" method="post" action="{{ url('/generator') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group">

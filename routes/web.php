@@ -59,6 +59,9 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'admin_access', 'prefix' =
     Route::resource('cls', 'ClsController');
     Route::resource('subjects', 'SubjectsController');
     Route::resource('chapters', 'ChaptersController');
+    Route::resource('competetive_exams', 'Competetive_examsController');
+    Route::resource('test_series', 'Test_seriesController');
+
 });
 
 
