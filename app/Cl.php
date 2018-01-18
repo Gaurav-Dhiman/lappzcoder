@@ -28,7 +28,7 @@ class Cl extends Model
     protected $fillable = ['title'];
 
     public function subjects(){
-        return $this->hasMany(Subject::class);
+        return $this->hasMany(Subject::class, 'cls_id');
     }
 
     

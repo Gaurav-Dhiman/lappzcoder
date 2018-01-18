@@ -7,6 +7,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Cl;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

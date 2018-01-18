@@ -33,11 +33,11 @@
             <div class="row">
                 <div class="col-sm-4 col-md-4 col-xs-12">
                     <img src="{{ asset('front-end-assets/images/schooling.jpg') }}" alt="#">
-                    <h2 class="schooling">Schooling <span>  </span></h2>
+                    <h2 class="schooling" onclick="location.href = '{{ route('classes') }}'">Schooling <span>  </span></h2>
                 </div>
                 <div class="col-sm-4 col-md-4 col-xs-12">
                     <img src="{{ asset('front-end-assets/images/competative.jpg') }}" alt="#">
-                    <h2 class="competative">Competetive <span>  </span></h2>
+                    <h2 class="competative" onclick="location.href = '{{ route('exams') }}'">Competetive <span>  </span></h2>
                 </div>
                 <div class="col-sm-4 col-md-4 col-xs-12">
                     <img src="{{ asset('front-end-assets/images/series.jpg') }}" alt="#">
@@ -56,117 +56,20 @@
                         <div class="span12">
 
                             <div id="owl-demo" class="owl-carousel">
-
-                                <div class="item"> <span class="exbox1">
-                        <a href="#"><img src="{{ asset('front-end-assets/images/vd1.jpg') }}" alt="#">
-                            <span class="vedia-text">
-                                <strong class="vdlink" style="background:#1e90c5">VIDEO</strong><br>
-                                <p><strong>6<sup>th</sup> Class<br></strong>
-                                    TUTORIALS</p>
-                                </span>
-                            </a>
-                        </span></div>
-
-                                <div class="item"> <span class="exbox1">
-                            <a href="#"><img src="{{ asset('front-end-assets/images/vd2.jpg') }}" alt="#">
-                                <span class="vedia-text">
-                                    <strong class="vdlink">VIDEO</strong><br>
-                                    <p><strong>7<sup>th</sup> Class<br></strong>
-                                        TUTORIALS</p>
-                                    </span>
-                                </a>
-                            </span></div>
-
-                                <div class="item"> <span class="exbox1">
-                                <a href="#"><img src="{{ asset('front-end-assets/images/v3.jpg') }}" alt="#">
-                                    <span class="vedia-text">
-                                        <strong class="vdlink" style="background:#ff7800">VIDEO</strong><br>
-                                        <p><strong>8<sup>th</sup> Class<br></strong>
-                                            TUTORIALS</p>
-                                        </span>
-                                    </a>
-                                </span></div>
-
-                                <div class="item"> <span class="exbox1">
-                                    <a href="#"><img src="{{ asset('front-end-assets/images/vd4.jpg') }}" alt="#">
-                                        <span class="vedia-text">
-                                            <strong class="vdlink" style="background:#10a17d">VIDEO</strong><br>
-                                            <p><strong>9<sup>th</sup> Class<br></strong>
-                                                TUTORIALS</p>
-                                            </span>
-                                        </a>
-                                    </span></div>
-
-                                <div class="item"> <span class="exbox1">
-                                        <a href="#"><img src="{{ asset('front-end-assets/images/vd5.jpg') }}" alt="#">
-                                            <span class="vedia-text">
-                                                <strong class="vdlink" style="background:#ed3560">VIDEO</strong><br>
-                                                <p><strong>10<sup>th</sup> Class<br></strong>
-                                                    TUTORIALS</p>
-                                                </span>
-                                            </a>
-                                        </span></div>
-
-                                <div class="item"> <span class="exbox1">
-                                            <a href="#"><img src="{{ asset('front-end-assets/images/vd1.jpg') }}"
-                                                             alt="#">
+                                @foreach($classes as $class)
+                                    <div class="item">
+                                        <span class="exbox1">
+                                            <a href="{{ route('subjects',$class->title) }}">
+                                                <img src="{{ asset('uploads/images/classes/'.$class->title.'.jpg') }}" alt="#">
                                                 <span class="vedia-text">
                                                     <strong class="vdlink" style="background:#1e90c5">VIDEO</strong><br>
-                                                    <p><strong>6<sup>th</sup> Class<br></strong>
+                                                    <p><strong>{{$class->title}} Class<br></strong>
                                                         TUTORIALS</p>
-                                                    </span>
-                                                </a>
-                                            </span></div>
-
-                                <div class="item"> <span class="exbox1">
-                                                <a href="#"><img src="{{ asset('front-end-assets/images/vd2.jpg') }}"
-                                                                 alt="#">
-                                                    <span class="vedia-text">
-                                                        <strong class="vdlink">VIDEO</strong><br>
-                                                        <p><strong>7<sup>th</sup> Class<br></strong>
-                                                            TUTORIALS</p>
-                                                        </span>
-                                                    </a>
-                                                </span></div>
-
-                                <div class="item"> <span class="exbox1">
-                                                    <a href="#"><img src="{{ asset('front-end-assets/images/v3.jpg') }}"
-                                                                     alt="#">
-                                                        <span class="vedia-text">
-                                                            <strong class="vdlink"
-                                                                    style="background:#ff7800">VIDEO</strong><br>
-                                                            <p><strong>8<sup>th</sup> Class<br></strong>
-                                                                TUTORIALS</p>
-                                                            </span>
-                                                        </a>
-                                                    </span></div>
-
-                                <div class="item"> <span class="exbox1">
-                                                        <a href="#"><img
-                                                                    src="{{ asset('front-end-assets/images/vd4.jpg') }}"
-                                                                    alt="#">
-                                                            <span class="vedia-text">
-                                                                <strong class="vdlink"
-                                                                        style="background:#10a17d">VIDEO</strong><br>
-                                                                <p><strong>9<sup>th</sup> Class<br></strong>
-                                                                    TUTORIALS</p>
-                                                                </span>
-                                                            </a>
-                                                        </span></div>
-
-                                <div class="item"> <span class="exbox1">
-                                                            <a href="#"><img
-                                                                        src="{{ asset('front-end-assets/images/vd5.jpg') }}"
-                                                                        alt="#">
-                                                                <span class="vedia-text">
-                                                                    <strong class="vdlink" style="background:#ed3560">VIDEO</strong><br>
-                                                                    <p><strong>10<sup>th</sup> Class<br></strong>
-                                                                        TUTORIALS</p>
-                                                                    </span>
-                                                                </a>
-                                                            </span></div>
-
-
+                                                </span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                @endforeach
                             </div>
                             <div class="customNavigation">
                                 <a class="btn prev fa fa-angle-left"></a>

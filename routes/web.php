@@ -26,6 +26,10 @@ Route::get('/user-register', 'UserAuthController@register')->name('front_registe
 Route::post('/user-register', 'UserAuthController@sign_up')->name('front_register');
 Route::get('/contact_us', 'ContactUsController@form')->name('front_contact_us');
 Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
+Route::get('/classes', 'SchoolingController@classes')->name('classes');
+Route::get('/class/{class}', 'SchoolingController@subjects')->name('subjects');
+Route::get('/class/{class}/{subject}', 'SchoolingController@chapters')->name('chapters');
+Route::get('/exams', 'SchoolingController@exams')->name('exams');
 Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('course_detail');
 Route::get('/videos/{chapter_id}', 'ChallengeController@videos')->name('videos');
 // All post routes

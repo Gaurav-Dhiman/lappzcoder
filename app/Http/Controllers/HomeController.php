@@ -7,6 +7,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cl;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -34,6 +35,7 @@ class HomeController extends Controller
     public function index()
     {
         #return view('adminlte::home');
-        return view('front-end.home');
+        $classes = Cl::all();
+        return view('front-end.home', compact('classes'));
     }
 }

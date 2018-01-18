@@ -28,6 +28,12 @@ class Subject extends Model
     protected $fillable = ['title', 'cls_id'];
 
     public function cls(){
-        return $this->belongsTo(Cl::class);
+        return $this->belongsTo(Cl::class, 'cls_id');
+    }
+
+
+
+    public function chapters(){
+        return $this->hasMany(Chapter::class);
     }
 }
