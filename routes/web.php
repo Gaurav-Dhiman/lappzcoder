@@ -20,11 +20,14 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('front_home');
 //	All get routes
 Route::get('/about_us', 'StaticPagesController@about_us')->name('front_about_us');
+Route::get('/privacy-policy', 'StaticPagesController@privacy_policy')->name('front_privacy_policy');
+Route::get('/terms-and-conditions', 'StaticPagesController@terms_cond')->name('front_tc');
 Route::get('/user-login', 'UserAuthController@login')->name('front_login');
 Route::post('/user-login', 'UserAuthController@authenticate')->name('front_login');
 Route::get('/user-register', 'UserAuthController@register')->name('front_register');
 Route::post('/user-register', 'UserAuthController@sign_up')->name('front_register');
 Route::get('/contact_us', 'ContactUsController@form')->name('front_contact_us');
+Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
 Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
 Route::get('/classes', 'SchoolingController@classes')->name('classes');
 Route::get('/class/{class}', 'SchoolingController@subjects')->name('subjects');

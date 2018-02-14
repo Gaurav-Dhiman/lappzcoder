@@ -19,4 +19,12 @@ class StaticPagesController
         return view('front-end.about_us');
     }
 
+
+    public function privacy_policy(){
+        return view('front-end.privacy_policy');
+    }
+
+    public function terms_cond(){
+        return view('front-end.terms_cond');
+    }
 }

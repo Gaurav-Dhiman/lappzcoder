@@ -5,14 +5,14 @@
     <div class="container-fluid">
         <div class="container">
             <div class="col-lg-3 col-sm-3 col-xs-12 col-md-3">
-                <h3>About gurugyanmantra</h3>
+                <h3>About Guru Gyan Mantra</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Our Team</a></li>
+                    <li><a href="{{ route('front_about_us') }}">About Us</a></li>
+                    <!--<li><a href="#">Our Team</a></li>
                     <li><a href="#">What We Do</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Blog</a></li>-->
+                    <li><a href="{{ route('front_privacy_policy') }}">Privacy Policy</a></li>
+                    <li><a href="{{ route('front_tc') }}">Terms & Condition</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-12 col-md-3">
@@ -20,11 +20,11 @@
 
                 <ul>
 
-                    <li><a href="#">Login / Register</a></li>
-                    <li><a href="#">Forum</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                    <li><a href="#">Our Client</a></li>
+                    <li><a href="{{ route('front_login') }}">Login</a></li>
+                    <li><a href="{{ route('front_register') }}">Register</a></li>
+                    <li><a href="{{ route('front_contact_us') }}">Contact Us</a></li>
+                    <!--<li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Our Client</a></li>-->
                 </ul>
             </div>
 
