@@ -10,9 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Cl;
-use App\Competetive_exam;
 use App\Http\Requests;
-use Illuminate\Http\Request;
 use FFMpeg\FFMpeg;
 use FFMpeg\Coordinate\TimeCode;
 
@@ -62,10 +60,6 @@ class SchoolingController
         return view('front-end.video', compact('video','videos', 'classTitle', 'subjectTitle', 'chapterName', 'videosPath'));
     }
 
-    public function exams(){
-        $exams = Competetive_exam::all();
-        return view('front-end.exams', compact('exams'));
-    }
 
     private function get_videos($videos = []){
         foreach($videos as $k=>$v){

@@ -45,7 +45,9 @@ Route::group(['middleware' => 'login_required'], function () {
     Route::get('/class/{class}/{subject}', 'SchoolingController@chapters')->name('chapters');
     Route::get('/class/{class}/{subject}/{chapter}', 'SchoolingController@tutorials')->name('tutorials');
     Route::get('/class/{class}/{subject}/{chapter}/{video}', 'SchoolingController@video')->name('video');
-    Route::get('/exams', 'SchoolingController@exams')->name('exams');
+    Route::get('/exams', 'ExamsController@exams')->name('exams');
+    Route::get('/exams/{exam}', 'ExamsController@videos')->name('exam_videos');
+    Route::get('/exams/{exam}/{video}', 'ExamsController@video')->name('exam_video');
     Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('course_detail');
     Route::get('/videos/{chapter_id}', 'ChallengeController@videos')->name('videos');
 });
