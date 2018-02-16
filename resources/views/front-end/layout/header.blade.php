@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="{{ asset('front-end-assets/images/logo.jpg') }}" alt=""></a>
+            <a class="navbar-brand" href="{{route('front_home')}}"><img src="{{ asset('front-end-assets/images/logo.jpg') }}" alt=""></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
