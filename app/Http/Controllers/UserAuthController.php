@@ -20,8 +20,8 @@ class UserAuthController extends Controller
 {
 
 
-    public function login(){
-        return view('front-end.login');
+    public function login(Request $request){
+        return view('front-end.login', ['params'=>$request->query()]);
     }
 
     public function register(){

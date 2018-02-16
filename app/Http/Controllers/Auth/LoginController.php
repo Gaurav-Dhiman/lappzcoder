@@ -102,6 +102,10 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
+        if($request->has('redirect_to')){
+           return redirect($request->input('redirect_to'));
+        }
+
         $roles = $user->roles->pluck('name')->toArray();
         if (in_array('admin',$roles)){
             return redirect(route('home'));

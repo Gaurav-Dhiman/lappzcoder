@@ -23,30 +23,31 @@ Route::get('/about_us', 'StaticPagesController@about_us')->name('front_about_us'
 Route::get('/privacy-policy', 'StaticPagesController@privacy_policy')->name('front_privacy_policy');
 Route::get('/terms-and-conditions', 'StaticPagesController@terms_cond')->name('front_tc');
 Route::get('/user-login', 'UserAuthController@login')->name('front_login');
-Route::post('/user-login', 'UserAuthController@authenticate')->name('front_login');
+Route::post('/user-login', 'Auth\LoginController@login')->name('front_login');
 Route::get('/user-register', 'UserAuthController@register')->name('front_register');
 Route::post('/user-register', 'UserAuthController@sign_up')->name('front_register');
 Route::get('/contact_us', 'ContactUsController@form')->name('front_contact_us');
-Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
-Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
-Route::get('/classes', 'SchoolingController@classes')->name('classes');
-Route::get('/class/{class}', 'SchoolingController@subjects')->name('subjects');
-Route::get('/class/{class}/{subject}', 'SchoolingController@chapters')->name('chapters');
-Route::get('/class/{class}/{subject}/{chapter}', 'SchoolingController@tutorials')->name('tutorials');
-Route::get('/class/{class}/{subject}/{chapter}/{video}', 'SchoolingController@video')->name('video');
-Route::get('/exams', 'SchoolingController@exams')->name('exams');
-Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('course_detail');
-Route::get('/videos/{chapter_id}', 'ChallengeController@videos')->name('videos');
+
 // All post routes
 
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'login_required'], function () {
     //    Route::get('/link1', function ()    {
     //         Uses Auth Middleware
     //    });
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
+
+    Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
+    Route::get('/classes', 'SchoolingController@classes')->name('classes');
+    Route::get('/class/{class}', 'SchoolingController@subjects')->name('subjects');
+    Route::get('/class/{class}/{subject}', 'SchoolingController@chapters')->name('chapters');
+    Route::get('/class/{class}/{subject}/{chapter}', 'SchoolingController@tutorials')->name('tutorials');
+    Route::get('/class/{class}/{subject}/{chapter}/{video}', 'SchoolingController@video')->name('video');
+    Route::get('/exams', 'SchoolingController@exams')->name('exams');
+    Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('course_detail');
+    Route::get('/videos/{chapter_id}', 'ChallengeController@videos')->name('videos');
 });
 
 
