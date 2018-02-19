@@ -61,7 +61,6 @@
 <script type="text/javascript" src="{{ asset('front-end-assets/js/jquery.jcarousel.min.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('front-end-assets/js/jcarousel.responsive.js') }}"></script>
-front_login
 <script src="{{ asset('front-end-assets/js/slider.js') }}"></script>
 <script src="{{ asset('front-end-assets/js/slick.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('front-end-assets/js/jquery.marquee.js') }}" type="text/javascript"></script>
