@@ -189,6 +189,7 @@
     </div>
     <div class="height30"></div>
     <div class="height30"></div>
+    @if(count($testimonials))
     <div class="container-fluid othersay">
         <div class="container">
             <div class="row">
@@ -199,56 +200,14 @@
                     <div class="jcarousel-wrapper">
                         <div class="jcarousel">
                             <ul>
-
-                                <li>
-                                    <div class="othersaybox-main">
-                                        <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
-                                                the printing and typesetting industry. </p>
-                                            <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel
-                                                Cliff</h3></div>
-                                        <a href="#">Vice President - Business Development</a></div>
-                                </li>
-                                <li>
-                                    <div class="othersaybox-main">
-                                        <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
-                                                the printing and typesetting industry. </p>
-                                            <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel
-                                                Cliff</h3></div>
-                                        <a href="#">Vice President - Business Development</a></div>
-                                </li>
-                                <li>
-                                    <div class="othersaybox-main">
-                                        <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
-                                                the printing and typesetting industry. </p>
-                                            <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel
-                                                Cliff</h3></div>
-                                        <a href="#">Vice President - Business Development</a></div>
-                                </li>
-                                <li>
-                                    <div class="othersaybox-main">
-                                        <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
-                                                the printing and typesetting industry. </p>
-                                            <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel
-                                                Cliff</h3></div>
-                                        <a href="#">Vice President - Business Development</a></div>
-                                </li>
-                                <li>
-                                    <div class="othersaybox-main">
-                                        <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
-                                                the printing and typesetting industry. </p>
-                                            <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel
-                                                Cliff</h3></div>
-                                        <a href="#">Vice President - Business Development</a></div>
-                                </li>
-                                <li>
-                                    <div class="othersaybox-main">
-                                        <div class="othersaybox"><p>Lorem Ipsum is simply dummy text of
-                                                the printing and typesetting industry. </p>
-                                            <h3><img src="{{ asset('front-end-assets/images/vp.png') }}" alt="#">Daniel
-                                                Cliff</h3></div>
-                                        <a href="#">Vice President - Business Development</a></div>
-                                </li>
-
+                                @foreach($testimonials as $testimonial)
+                                    <li>
+                                        <div class="othersaybox-main">
+                                            <div class="othersaybox"><p>{{ $testimonial->description }} </p>
+                                                <h3><img src="{{ asset('storage/'. $testimonial->image) }}" width="50" style="border-radius:50px;" alt="#">{{ $testimonial->name }}</h3></div>
+                                            <a href="javascript:void(0);">{{ $testimonial->designation }}</a></div>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
 
@@ -261,4 +220,5 @@
             </div>
         </div>
     </div>
+    @endif
 @endsection

@@ -28,6 +28,17 @@ Route::get('/user-register', 'UserAuthController@register')->name('front_registe
 Route::post('/user-register', 'UserAuthController@sign_up')->name('front_register');
 Route::get('/contact_us', 'ContactUsController@form')->name('front_contact_us');
 
+Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
+Route::get('/classes', 'SchoolingController@classes')->name('classes');
+Route::get('/class/{class}', 'SchoolingController@subjects')->name('subjects');
+Route::get('/class/{class}/{subject}', 'SchoolingController@chapters')->name('chapters');
+Route::get('/class/{class}/{subject}/{chapter}', 'SchoolingController@tutorials')->name('tutorials');
+
+Route::get('/exams', 'ExamsController@exams')->name('exams');
+Route::get('/exams/{exam}', 'ExamsController@videos')->name('exam_videos');
+Route::get('/exams/{exam}/{video}', 'ExamsController@video')->name('exam_video');
+Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('course_detail');
+
 // All post routes
 
 
@@ -39,16 +50,7 @@ Route::group(['middleware' => 'login_required'], function () {
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
 
-    Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
-    Route::get('/classes', 'SchoolingController@classes')->name('classes');
-    Route::get('/class/{class}', 'SchoolingController@subjects')->name('subjects');
-    Route::get('/class/{class}/{subject}', 'SchoolingController@chapters')->name('chapters');
-    Route::get('/class/{class}/{subject}/{chapter}', 'SchoolingController@tutorials')->name('tutorials');
     Route::get('/class/{class}/{subject}/{chapter}/{video}', 'SchoolingController@video')->name('video');
-    Route::get('/exams', 'ExamsController@exams')->name('exams');
-    Route::get('/exams/{exam}', 'ExamsController@videos')->name('exam_videos');
-    Route::get('/exams/{exam}/{video}', 'ExamsController@video')->name('exam_video');
-    Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('course_detail');
     Route::get('/videos/{chapter_id}', 'ChallengeController@videos')->name('videos');
 });
 
@@ -73,7 +75,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'admin_access', 'prefix' =
     Route::resource('chapters', 'ChaptersController');
     Route::resource('competetive_exams', 'Competetive_examsController');
     Route::resource('test_series', 'Test_seriesController');
-
+    Route::resource('testimonials', 'TestimonialsController');
 });
 
 

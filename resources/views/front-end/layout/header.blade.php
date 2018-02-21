@@ -40,7 +40,7 @@
                 <li class="dropdown">
                     <a href="{{ route('front_challenge') }}">Take a Challenge</a></li>
                 <li class="dropdown">
-                    <a href="#">Send a Query</a></li>
+                    <a href="#">Blog</a></li>
                 <li class="contactus">
                     <a href="{{ route('front_contact_us') }}">Contact Us</a></li>
 

@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use App\Cl;
 use App\Http\Requests;
+use App\Testimonial;
 use Illuminate\Http\Request;
 
 /**
@@ -36,6 +37,7 @@ class HomeController extends Controller
     {
         #return view('adminlte::home');
         $classes = Cl::all();
-        return view('front-end.home', compact('classes'));
+        $testimonials = Testimonial::all();
+        return view('front-end.home', compact('classes', 'testimonials'));
     }
 }
