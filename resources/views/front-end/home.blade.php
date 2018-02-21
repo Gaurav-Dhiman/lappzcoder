@@ -87,38 +87,18 @@
             <h2 class="heading">Latest Video Lecture</h2>
             <div class="row">
                 <div class="marquee-with-options">
-                    <div class="col-sm-3 col-md-3 col-xs-12 UpcomingSessions-box">
-                        <span><img src="{{ asset('front-end-assets/images/first-vd.jpg') }}" alt="#"></span>
-                        <h3>Lorem Ipsum is<br>
-                            simply dummy text </h3>
-                        <p>Lorem Ipsum is simply dummy text of<br>
-                            the printing and typesetting industry. </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-xs-12 UpcomingSessions-box">
-                        <span><img src="{{ asset('front-end-assets/images/sec-vd.jpg') }}" alt="#"></span>
-                        <h3>Lorem Ipsum is<br>
-                            simply dummy text </h3>
-                        <p>Lorem Ipsum is simply dummy text of<br>
-                            the printing and typesetting industry. </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-xs-12 UpcomingSessions-box">
-                        <span><img src="{{ asset('front-end-assets/images/third-vd.jpg') }}" alt="#"></span>
-                        <h3>Lorem Ipsum is<br>
-                            simply dummy text </h3>
-                        <p>Lorem Ipsum is simply dummy text of<br>
-                            the printing and typesetting industry. </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-xs-12 UpcomingSessions-box">
-                        <span><img src="{{ asset('front-end-assets/images/forth-vd.jpg') }}" alt="#"></span>
-                        <h3>Lorem Ipsum is<br>
-                            simply dummy text </h3>
-                        <p>Lorem Ipsum is simply dummy text of<br>
-                            the printing and typesetting industry. </p>
-                        <a href="#">Read More</a>
-                    </div>
+                    @forelse($latestVideos as $video)
+                        <div class="col-sm-3 col-md-3 col-xs-12 UpcomingSessions-box">
+
+                            <span><img src="{{ $video['thumb_img_path'] }}" class="img-responsive" width="300px" alt="#"></span>
+                            <h3>{{$video['title']}}</h3>
+                            <a href="{{ $video['video_link']   }}">
+                                Watch
+                            </a>
+                        </div>
+                    @empty
+                        <div class="alert alert-info"><p>Sorry, No Videos have been added for this chapter yet! Please check again later.</p></div>
+                    @endforelse
                 </div>
             </div>
         </div>

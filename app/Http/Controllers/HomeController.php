@@ -35,9 +35,43 @@ class HomeController extends Controller
      */
     public function index()
     {
-        #return view('adminlte::home');
+        $cmd = 'find '.public_path('uploads/videos/').' -path *.mp4 -type f | sort -rn | head -n 10';
+        $latestVideos = explode("\n", substr(shell_exec($cmd), 0, -1));
+        $latestVideos = $this->get_videos($latestVideos);
         $classes = Cl::all();
         $testimonials = Testimonial::all();
-        return view('front-end.home', compact('classes', 'testimonials'));
+        return view('front-end.home', compact('classes', 'testimonials', 'latestVideos'));
+    }
+
+    private function get_videos($videos = []){
+        foreach($videos as $k=>$v){
+            $filePath = $v;
+            $v = explode('.', $v);
+            $lastSlashPos = strrpos($v[0],'/');
+            $file_name = substr($v[0], $lastSlashPos+ 1);
+            $videoFolderPath = substr($v[0],0, $lastSlashPos + 1);
+            $ext = $v[1];
+            if(!file_exists($videoFolderPath."$file_name.jpg")){
+                $ffmpeg = FFMpeg::create();
+                $video = $ffmpeg->open($filePath);
+                $video->frame(
+                    TimeCode::fromSeconds(2)
+                )->save($videoFolderPath."$file_name.jpg");
+            }
+
+            $file_location_url = asset(substr($videoFolderPath,strpos($videoFolderPath,'uploads/'))).'/';
+            $video_page_link = str_replace("uploads/videos/", "", $file_location_url).$file_name.'.'.$ext;
+            $video_page_link = str_replace("schooling", "class", $video_page_link);
+
+            $videos[$k] = [
+                'file_path' => $file_location_url,
+                'file_name' => $file_name.'.'.$ext,
+                'file_ext' => $ext,
+                'thumb_img_path'=> $file_location_url."$file_name.jpg",
+                'title' => ucfirst(str_replace('_',' ',$file_name)),
+                'video_link' =>$video_page_link
+            ];
+        }
+        return $videos;
     }
 }

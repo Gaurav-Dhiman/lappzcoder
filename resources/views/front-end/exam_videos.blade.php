@@ -30,7 +30,7 @@
                         </a>
                     </div>
                 @empty
-                    <div class="alert alert-info"><p>Sorry, No Videos have been added for this chapter yet! Please check again later.</p></div>
+                    <div class="alert alert-info"><p>Sorry, No Videos have been added for this exam yet! Please check again later.</p></div>
                 @endforelse
             </div>
         </div>
