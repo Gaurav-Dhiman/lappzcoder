@@ -39,6 +39,11 @@
                     <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
+
+            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-2">
+                <a href="#"><img src="{{ asset('front-end-assets/images/gplaystore.png') }}" alt="#"></a>
+                <a href="#"><img src="{{ asset('front-end-assets/images/app-store.png') }}" alt="#"></a>
+            </div>
         </div>
     </div>
 </footer>

@@ -52,6 +52,8 @@ Route::group(['middleware' => 'login_required'], function () {
 
     Route::get('/class/{class}/{subject}/{chapter}/{video}', 'SchoolingController@video')->name('video');
     Route::get('/videos/{chapter_id}', 'ChallengeController@videos')->name('videos');
+    Route::get('/profile', 'UserAuthController@profile')->name('profile');
+    Route::post('/profile', 'UserAuthController@update_profile')->name('update_profile');
 });
 
 

@@ -49,7 +49,7 @@
                         <button onclick="location.href='{{ route('front_login')}}'" >Login</button>
                         <button onclick="location.href='{{ route('front_register')}}'" >Register</button>
                     @else
-                        <button onclick="location.href='{{ route('front_login')}}'" >Profile</button>
+                        <button onclick="location.href='{{ route('profile')}}'" >Profile</button>
                         <button onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Logout</button>
                         <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                             {{csrf_field()}}

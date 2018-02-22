@@ -61,4 +61,30 @@ class UserAuthController extends Controller
         // TODO: Send email TO user
         return True;
     }
+
+    public function profile(Request $request){
+        $classOptions = Cl::all()->pluck('title', 'id');
+        $user = \Auth::user();
+        return view('front-end.profile', compact('classOptions', 'user'));
+    }
+
+    public function update_profile(Request $request){
+        $this->validate($request, [
+            'name' => 'required',
+            'password' => 'confirmed',
+            'phone_no' => 'required|digits:10',
+            'class' => 'required',
+        ]);
+        $user = \Auth::user();
+        if (!is_null($request->password)){
+            $user['password'] = bcrypt($request->password);
+        }
+        $user->name = $request->name;
+        $user->phone_no = $request->phone_no;
+        $user->class = $request->class;
+        $user->save();
+
+        Session::flash('flash_message', 'Account Details Updated !!');
+        return redirect(route('profile'));
+    }
 }
