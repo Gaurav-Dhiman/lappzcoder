@@ -27,6 +27,7 @@ Route::post('/user-login', 'Auth\LoginController@login')->name('front_login');
 Route::get('/user-register', 'UserAuthController@register')->name('front_register');
 Route::post('/user-register', 'UserAuthController@sign_up')->name('front_register');
 Route::get('/contact_us', 'ContactUsController@form')->name('front_contact_us');
+Route::post('/contact_us', 'ContactUsController@submit')->name('submit_query');
 
 Route::get('/challenge', 'ChallengeController@course')->name('front_challenge');
 Route::get('/classes', 'SchoolingController@classes')->name('classes');
