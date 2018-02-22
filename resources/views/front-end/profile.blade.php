@@ -69,9 +69,9 @@
                             <input name="password_confirmation" type="password" placeholder="Confirm Your Password">
                         </div>
                         <div class="col-sm-12 col-xs-12 col-md-12">
-                            <input name="phone_no" type="number" placeholder="Enter Your Phone Number" value="{{ old('phone_no',  $user->phone_no) }}">
+                            <input name="phone_no" type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" placeholder="Enter Your Phone Number" value="{{ old('phone_no',  $user->phone_no) }}">
                         </div>
-                        <div class="col-sm-12 col-xs-12 col-md-12">
+                        <div class="col-sm-12 col-xs-12 col-md-12" style="margin-bottom: 15px;">
                             <select name="class" id="class_id">
                                 <option value="">Select a Class</option>
                                 @foreach($classOptions as $key=>$class)

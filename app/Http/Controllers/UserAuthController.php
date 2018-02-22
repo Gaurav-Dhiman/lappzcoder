@@ -10,11 +10,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Mail\UserRegistered;
 use App\User;
 use App\Cl;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Session;
 
 class UserAuthController extends Controller
@@ -58,7 +60,8 @@ class UserAuthController extends Controller
     }
 
     private function send_register_email($user){
-        // TODO: Send email TO user
+
+        Mail::to($user)->send(new UserRegistered($user));
         return True;
     }
 
