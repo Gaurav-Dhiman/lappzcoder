@@ -31,6 +31,8 @@
         <div class="container">
             <div class="row">
                 <div class="height30"></div><div class="height30"></div>
+                @if($allowed)
+
                 <div class="col-sm-9 col-md-9 col-xs-12 fulvedio">
                     <video id="my-video" class="video-js" controls preload="auto" width="800" height="400"
                            poster="{{$video['thumb_img_path']}}" data-setup="{}">
@@ -54,6 +56,9 @@
                     </ul>
                 </div>
             </div>
+            @else
+                <div class="alert alert-info">You cannot watch this video as you are not a class {{$classTitle}} student</div>
+            @endif
         </div>
     </div>
 @endsection

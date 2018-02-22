@@ -46,6 +46,10 @@ class SchoolingController
     }
 
     public function video($classTitle, $subjectTitle, $chapterName, $video){
+        $allowed = False;
+        if(\Auth::user()->class == $classTitle){
+            $allowed = True;
+        }
         $videosPath = public_path("uploads/videos/schooling/$classTitle/$subjectTitle/$chapterName");
         $video = [$videosPath.'/'.$video];
         $videos = [];
@@ -57,7 +61,7 @@ class SchoolingController
 
         // Get Main Video Details
         $video = $this->get_videos($video)[0];
-        return view('front-end.video', compact('video','videos', 'classTitle', 'subjectTitle', 'chapterName', 'videosPath'));
+        return view('front-end.video', compact('video','videos', 'classTitle', 'subjectTitle', 'chapterName', 'videosPath', 'allowed'));
     }
 
 

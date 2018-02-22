@@ -25,13 +25,13 @@
 
             <div class="col-sm-3 col-md-3 col-xs-12 left-section">
                 <ul>
-                    <li><a href="#">Science</a></li>
-                    <li><a href="#">Hindi</a></li>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Mathematics</a></li>
-                    <li><a href="#">Sanskrit</a></li>
-                    <li><a href="#">Social Science</a></li>
-                    <li><a href="#">Computer Science</a></li>
+                    <li><a href="#">Class 6<sup>th</sup></a></li>
+                    <li><a href="#">Class 7<sup>th</sup></a></li>
+                    <li><a href="#">Class 8<sup>th</sup></a></li>
+                    <li><a href="#">Class 9<sup>th</sup></a></li>
+                    <li><a href="#">Class 10<sup>th</sup></a></li>
+                    <li><a href="#">Class 11<sup>th</sup></a></li>
+                    <li><a href="#">Class 12<sup>th</sup></a></li>
 
                 </ul>
             </div>

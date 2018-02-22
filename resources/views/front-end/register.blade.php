@@ -47,6 +47,15 @@
                         @if(Session::has('flash_message'))
                             <div class="alert alert-danger"><p>{!! Session::get('flash_message')  !!} </p></div>
                         @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         {{csrf_field()}}
                         <div class="col-sm-12 col-xs-12 col-md-12">
                             <input type="text" name="name" placeholder="Enter Your Name" value="{{ old('name') }}">
@@ -62,8 +71,20 @@
                             <input name="password" type="password" placeholder="Enter Your Password">
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6">
-                            <input name="cnf_password" type="password" placeholder="Confirm Your Password">
+                            <input name="password_confirmation" type="password" placeholder="Confirm Your Password">
                         </div>
+                        <div class="col-sm-12 col-xs-12 col-md-12">
+                            <input name="phone_no" type="number" placeholder="Enter Your Phone Number" value="{{ old('phone_no') }}">
+                        </div>
+                        <div class="col-sm-12 col-xs-12 col-md-12">
+                            <select name="class" id="class_id">
+                                <option value="">Select a Class</option>
+                                @foreach($classOptions as $key=>$class)
+                                    <option value="{{ $class }}" {{ (old('class') == $class) ? 'selected' : '' }}>{{ $class }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
 
                         <div class="col-sm-12 col-md-12 col-xs-12">
                             <button type="submit">Register</button>
