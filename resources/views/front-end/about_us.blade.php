@@ -9,8 +9,8 @@
         <div class="row"><h1>About Us</h1>
             <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 breadcrumb">
                 <ul>
-                    <li>Home /</li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="{{route('front_home')}}">Home</a> / </li>
+                    <li>About Us</li>
                 </ul>
             </div>
         </div>
@@ -25,49 +25,63 @@
 
             <div class="col-sm-3 col-md-3 col-xs-12 left-section">
                 <ul>
-                    <li><a href="#">Class 6<sup>th</sup></a></li>
-                    <li><a href="#">Class 7<sup>th</sup></a></li>
-                    <li><a href="#">Class 8<sup>th</sup></a></li>
-                    <li><a href="#">Class 9<sup>th</sup></a></li>
-                    <li><a href="#">Class 10<sup>th</sup></a></li>
-                    <li><a href="#">Class 11<sup>th</sup></a></li>
-                    <li><a href="#">Class 12<sup>th</sup></a></li>
+                    <li><a href="{{ route('subjects', ['6th']) }}">Class 6<sup>th</sup></a></li>
+                    <li><a href="{{ route('subjects', ['7th']) }}">Class 7<sup>th</sup></a></li>
+                    <li><a href="{{ route('subjects', ['8th']) }}">Class 8<sup>th</sup></a></li>
+                    <li><a href="{{ route('subjects', ['9th']) }}">Class 9<sup>th</sup></a></li>
+                    <li><a href="{{ route('subjects', ['10th']) }}">Class 10<sup>th</sup></a></li>
+                    <li><a href="{{ route('subjects', ['11th']) }}">Class 11<sup>th</sup></a></li>
+                    <li><a href="{{ route('subjects', ['12th']) }}">Class 12<sup>th</sup></a></li>
 
                 </ul>
             </div>
 
             <div class="col-sm-9 col-md-9 col-xs-12">
-                <h3>What is Lorem Ipsum?</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <h3>About Us!</h3>
+                <p>Being a parent of a school-goer, it is challenging for you to make your kids love Maths. It is
+                    the subject that most of the kids hate as it takes lots of their brainpower to master Maths.
+                    Therefore learning and practicing Maths has never been so easier. At Guru Gyan Mantra,
+                    your kids can assure to build a stronger foundation in Maths, while finding all the problems
+                    just like a cakewalk for them. It is the best online Maths Tutoring Websites that helps the
+                    students to have a good grip over Mathematics via in-depth understanding and online
+                    practicing. The Online Math Courses at Guru Gyan Mantra help students to broaden their
+                    brain so as to clasp the concepts in Maths and other subjects with higher efficiency and
+                    speed.</p>
 
-                <h3>Where does it come from?</h3>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                    classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
-                    professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
-                    consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
-                    literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33
-                    of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
-                    book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of
-                    Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+                <h3>Mission and Vision</h3>
+                <p>Guru Gyan Mantra is the leading and Best Online Tutoring Websites that is dedicated
+                    towards training students from class 6 to 12 th standards in the subject of Maths and other
+                    competitive exams like SSC, Banking and all. The mission of this online maths tutorial
+                    website is to provide a platform to the students from across the nation to access the
+                    moderated and quality maths lessons and online Mathematics Video created by some of the
+                    renowned and experienced teachers from the nation.</p>
 
-                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                    Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in
-                    their exact original form, accompanied by English versions from the 1914 translation by H.
-                    Rackham.</p>
+                <p>Guru Gyan Mantra focuses on leveraging the true potential of internet technology and hence
+                    it has made possible for them to increase the accessibility of their Free Online Math Courses
+                    and video tutorials. Therefore, providing the students with equal opportunities to access their
+                    superior grade math lessons to improve their mathematical literacy in today’s advanced
+                    world. It is the vision of this online Math Tutorial website to alter the way students thinks
+                    about math education and to solve all the queries and problems that emerge in Maths.</p>
 
-                <h3>Why do we use it?</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                    default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
-                    infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose
-                    (injected humour and the like).</p>
+                <h3>What Differentiates Guru Gyan Mantra from Others?</h3>
+                <p>Although there are several online Maths Tutorial Websites with similar mission and vision,
+                    but the approach of Guru Gyan Mantra is different and unique. Most of the tutorial websites
+                    rely greatly on the community so as to flag their content as unsuitable, but each content and
+                    Mathematics Video present at Guru Gyan Mantra is moderated and certified by the math
+                    lecturers and teachers like the web resources, lessons, comments, reviews and document
+                    resources.</p>
+
+                <p>Rather than uploading any Math Videos for Kids on the website, the certified maths teacher
+                    screen these videos carefully and only make eligible content to be uploaded which is high in
+                    quality and precise. The website never focuses on sorting through the low and high quality
+                    maths lessons; instead the website focuses on uploading only the high quality math videos
+                    and lessons for students, thereby making it is the top rated and best Math Websites for
+                    Students.</p>
+
+                <p>By using the creative ways and animations, the online tutors make math learning easier for
+                    the students and the concepts and ideas are likely to get etched into the minds of the students
+                    forever. Therefore making math fun for kids to learn and the student grow to understand that
+                    this is the subject of fun.</p>
 
 
             </div>

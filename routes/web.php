@@ -22,6 +22,7 @@ Route::get('/', 'HomeController@index')->name('front_home');
 Route::get('/about_us', 'StaticPagesController@about_us')->name('front_about_us');
 Route::get('/privacy-policy', 'StaticPagesController@privacy_policy')->name('front_privacy_policy');
 Route::get('/terms-and-conditions', 'StaticPagesController@terms_cond')->name('front_tc');
+Route::get('/what-we-do', 'StaticPagesController@what_we_do')->name('front_what_we_do');
 Route::get('/user-login', 'UserAuthController@login')->name('front_login');
 Route::post('/user-login', 'Auth\LoginController@login')->name('front_login');
 Route::get('/user-register', 'UserAuthController@register')->name('front_register');

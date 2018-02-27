@@ -27,4 +27,8 @@ class StaticPagesController
     public function terms_cond(){
         return view('front-end.terms_cond');
     }
+
+    public function what_we_do(){
+        return view('front-end.what_we_do');
+    }
 }

@@ -9,7 +9,7 @@
                 <ul>
                     <li><a href="{{ route('front_about_us') }}">About Us</a></li>
                     <li><a href="#">Our Team</a></li>
-                    <li><a href="#">What We Do</a></li>
+                    <li><a href="{{ route('front_what_we_do') }}">What We Do</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="{{ route('front_privacy_policy') }}">Privacy Policy</a></li>
                     <li><a href="{{ route('front_tc') }}">Terms & Condition</a></li>
