@@ -12,7 +12,6 @@
                     <ul>
                         <li><a href="{{route('front_home')}}">Home</a> / </li>
                         <li><a href="{{route('exams')}}">Exams</a> / </li>
-                        {{--<li><a href="{{route('exam_videos',$examTitle)}}">{{$examTitle}}</a> / </li>--}}
                         <li>{{$examTitle}}</li>
                     </ul>
                 </div>
@@ -24,7 +23,7 @@
             <div class="row vedio-detail">
                 @forelse($videos as $video)
                     <div class="col-sm-3 col-md-3 col-xs-12">
-                        <a href="{{ route('exam_video', [$video['file_name']]) }}">
+                        <a href="{{ route('exam_video', [$examTitle, $video['file_name']]) }}">
                             <span><img src="{{ $video['thumb_img_path'] }}" alt="#"></span>
                             <h3>{{$video['title']}} </h3>
                         </a>
