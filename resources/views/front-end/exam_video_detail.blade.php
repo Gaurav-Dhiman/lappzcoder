@@ -45,7 +45,7 @@
                     <ul>
                         @foreach($videos as $video)
                             <li style="list-style: none;">
-                                <a href="{{route('video', [$classTitle, $subjectTitle, $chapterName, $video['file_name']])}}">
+                                <a href="{{route('exam_video', [$examName, $video['file_name']])}}">
                                     <span><img src="{{ $video['thumb_img_path'] }}" class="img-responsive" alt="#"></span>
                                     <h3>{{ $video['title'] }}</h3>
                                 </a>
