@@ -23,7 +23,7 @@ class ExamsController{
 
     public function videos($examTitle){
         //dd($classTitle, $subjectTitle, $chapterName);
-        $videosPath = public_path("uploads/videos/exams/$examTitle");
+        $videosPath = public_path("uploads/videos/competative/$examTitle");
         $videos = [];
         if(file_exists($videosPath)){
             $videos = glob($videosPath.'/*.mp4');
