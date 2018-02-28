@@ -6,6 +6,12 @@
         <div class="row">
             <div class="container">
                 <h1>Exams</h1>
+                <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 breadcrumb">
+                    <ul>
+                        <li><a href="{{route('front_home')}}">Home</a> / </li>
+                        <li>Exams </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
