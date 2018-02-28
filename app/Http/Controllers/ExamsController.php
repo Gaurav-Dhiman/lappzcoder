@@ -33,10 +33,7 @@ class ExamsController{
     }
     
     public function video($examName, $video){
-        $allowed = False;
-        if(\Auth::user()->class == $classTitle){
-            $allowed = True;
-        }
+        $allowed = True;
         $videosPath = public_path("uploads/videos/competative/$examName");
         $video = [$videosPath.'/'.$video];
         $videos = [];
