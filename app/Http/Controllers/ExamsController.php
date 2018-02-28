@@ -31,6 +31,24 @@ class ExamsController{
         $videos = $this->get_videos($videos);
         return view('front-end.exam_videos', compact('videos', 'examTitle'));
     }
+    
+    public function video($examName, $video){
+        $allowed = False;
+        if(\Auth::user()->class == $classTitle){
+            $allowed = True;
+        }
+        $videosPath = public_path("uploads/videos/competative/$examName");
+        $video = [$videosPath.'/'.$video];
+        $videos = [];
+        if(file_exists($videosPath)){
+            $videos = array_diff(glob($videosPath.'/*.mp4'), $video);
+        }
+        // Get all Related Videos
+        $videos = $this->get_videos($videos);
+        // Get Main Video Details
+        $video = $this->get_videos($video)[0];
+        return view('front-end.exam_video_detail', compact('video','videos', 'examName', 'videosPath', 'allowed'));
+    }
 
     private function get_videos($videos = []){
         foreach($videos as $k=>$v){
