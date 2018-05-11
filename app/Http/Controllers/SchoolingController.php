@@ -13,28 +13,31 @@ use App\Cl;
 use App\Http\Requests;
 use FFMpeg\FFMpeg;
 use FFMpeg\Coordinate\TimeCode;
+use Illuminate\Http\Request;
 
 class SchoolingController
 {
 
 
-    public function classes(){
+    public function classes(Request $request){
         $classes = Cl::all();
-        return view('front-end.classes', compact('classes'));
+        return $request->expectsJson() ? response()->json($classes) : view('front-end.classes', compact('classes'));
     }
 
 
-    public function subjects($classTitle){
+    public function subjects(Request $request, $classTitle){
         $subjects = Cl::where('title', $classTitle)->firstOrFail()->subjects;
-        return view('front-end.subjects', compact('subjects', 'classTitle'));
+        $response = compact('subjects', 'classTitle');
+        return $request->expectsJson() ? response()->json($response) : view('front-end.subjects', $response);
     }
 
-    public function chapters($classTitle, $subjectTitle){
+    public function chapters(Request $request, $classTitle, $subjectTitle){
         $chapters = Cl::where('title', $classTitle)->firstOrFail()->subjects()->where('title', $subjectTitle)->firstOrFail()->chapters;
-        return view('front-end.chapters', compact('chapters', 'classTitle', 'subjectTitle'));
+        $response = compact('chapters', 'classTitle', 'subjectTitle');
+        return $request->expectsJson() ? response()->json($response) : view('front-end.chapters', $response);
     }
 
-    public function tutorials($classTitle, $subjectTitle, $chapterName){
+    public function tutorials(Request $request, $classTitle, $subjectTitle, $chapterName){
         //dd($classTitle, $subjectTitle, $chapterName);
         $videosPath = public_path("uploads/videos/schooling/$classTitle/$subjectTitle/$chapterName");
         $videos = [];
@@ -42,26 +45,28 @@ class SchoolingController
             $videos = glob($videosPath.'/*.mp4');
         }
         $videos = $this->get_videos($videos);
-        return view('front-end.tutorials', compact('videos', 'classTitle', 'subjectTitle', 'chapterName', 'videosPath'));
+        $response = compact('videos', 'classTitle', 'subjectTitle', 'chapterName', 'videosPath');
+        return $request->expectsJson() ? response()->json($response) : view('front-end.tutorials', $response);
     }
 
-    public function video($classTitle, $subjectTitle, $chapterName, $video){
+    public function video(Request $request, $classTitle, $subjectTitle, $chapterName, $video){
         $allowed = False;
         if(\Auth::user()->class == $classTitle){
             $allowed = True;
         }
         $videosPath = public_path("uploads/videos/schooling/$classTitle/$subjectTitle/$chapterName");
         $video = [$videosPath.'/'.$video];
-        $videos = [];
+        $related_videos = [];
         if(file_exists($videosPath)){
-            $videos = array_diff(glob($videosPath.'/*.mp4'), $video);
+            $related_videos = array_diff(glob($videosPath.'/*.mp4'), $video);
         }
         // Get all Related Videos
-        $videos = $this->get_videos($videos);
+        $related_videos = $this->get_videos($related_videos);
 
         // Get Main Video Details
         $video = $this->get_videos($video)[0];
-        return view('front-end.video', compact('video','videos', 'classTitle', 'subjectTitle', 'chapterName', 'videosPath', 'allowed'));
+        $response = compact('video','related_videos', 'classTitle', 'subjectTitle', 'chapterName', 'videosPath', 'allowed');
+        return $request->expectsJson() ? response()->json($response) :  view('front-end.video', $response);
     }
 
 

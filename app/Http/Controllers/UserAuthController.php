@@ -17,6 +17,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\ValidationException;
 use Session;
 
 class UserAuthController extends Controller
@@ -32,31 +33,46 @@ class UserAuthController extends Controller
         return view('front-end.register', compact('classOptions'));
     }
 
-    public function sign_up(Request $request)
+    public function sign_up_from_web(Request $request)
     {
-    	try {
-    		$this->validate($request, [
-    		    'name' => 'required',
-                'email' => 'required|unique:users,email',
-                'password' => 'required|confirmed',
-                'phone_no' => 'required|digits:10',
-                'class' => 'required',
-            ]);
-
-	        $data = $request->except(['password', 'password_confirmation']);
-	        $data['password'] = bcrypt($request->password);
-	        $user = User::create($data);
-			$user->assignRole(['user']);
-	        $this->send_register_email($user);
-	        Session::flash('flash_message', 'Welcome !!');
-            Auth::loginUsingId($user->id);
-	        return redirect('/home');	
-    	}catch(QueryException $e){
-    	    $login_link = route('front_login');
+        try {
+    		$user = $this->signup($request);
+            Session::flash('flash_message', 'Welcome !!');
+            return redirect('/home');
+        }catch(QueryException $e){
+            $login_link = route('front_login');
             Session::flash('flash_message', "User Already Exists !! Click <a href='$login_link'>here</a> to Login");
             return back()->withInput();
-    	}
-    	
+        }
+    }
+
+
+    public function sign_up_from_api(Request $request){
+        try {
+            $user = $this->signup($request);
+            $user->rollApiKey();
+            return $user->toJson();
+        }catch(QueryException $e){
+           return response()->json(['status'=>False, 'msg'=>'User already exists !!']);
+        }
+    }
+
+    private function signup(Request $request){
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|confirmed',
+            'phone_no' => 'required|digits:10',
+            'class' => 'required',
+        ]);
+
+        $data = $request->except(['password', 'password_confirmation']);
+        $data['password'] = bcrypt($request->password);
+        $user = User::create($data);
+        $user->assignRole(['user']);
+        // $this->send_register_email($user);
+        Auth::loginUsingId($user->id);
+        return $user;
     }
 
     private function send_register_email($user){
@@ -68,7 +84,8 @@ class UserAuthController extends Controller
     public function profile(Request $request){
         $classOptions = Cl::all()->pluck('title', 'id');
         $user = \Auth::user();
-        return view('front-end.profile', compact('classOptions', 'user'));
+        $response = compact('classOptions', 'user'); 
+        return  $request->expectsJson() ? response()->json($response) : view('front-end.profile', $response);
     }
 
     public function update_profile(Request $request){
@@ -86,8 +103,12 @@ class UserAuthController extends Controller
         $user->phone_no = $request->phone_no;
         $user->class = $request->class;
         $user->save();
-
-        Session::flash('flash_message', 'Account Details Updated !!');
-        return redirect(route('profile'));
+        if ($request->expectsJson()){
+            $response = ['status' => 'success' ,'message'=>'Profile Updated Successfully', 'user'=>$user];
+            return response()->json($response);
+        }else{
+            Session::flash('flash_message', 'Account Details Updated !!');
+            return redirect(route('profile'));
+        }
     }
 }

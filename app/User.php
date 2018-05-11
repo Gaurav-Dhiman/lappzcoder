@@ -46,4 +46,14 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class);
     }
+
+    /**
+     * Roll API Key
+     */
+    public function rollApiKey(){
+       do{
+          $this->api_token = str_random(60);
+       }while($this->where('api_token', $this->api_token)->exists());
+       $this->save();
+    }
 }

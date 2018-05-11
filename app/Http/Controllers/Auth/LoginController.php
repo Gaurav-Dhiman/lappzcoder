@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
-
+use Auth;
 
 class LoginController extends Controller
 {
@@ -65,6 +65,29 @@ class LoginController extends Controller
         return config('auth.providers.users.field','email');
     }
 
+
+    /**
+     * Handle an authentication attempt.
+     *
+     * @param  \Illuminate\Http\Request $request
+     *
+     * @return Response
+     */
+    public function authenticate(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return Auth::user()->toJson();
+        }else{
+            return response()->json(['message'=>'Authentication Failed. Invalid email or Password.'], 401);
+        }
+    }
+
     /**
      * Attempt to log the user into the application.
      *
@@ -102,15 +125,20 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        if($request->has('redirect_to')){
-           return redirect($request->input('redirect_to'));
-        }
+        if ($request->expectsJson()){
+            $user->rollApiKey();
+            return $user->toJson();
+        }else{
+            if($request->has('redirect_to')){
+               return redirect($request->input('redirect_to'));
+            }
 
-        $roles = $user->roles->pluck('name')->toArray();
-        if (in_array('admin',$roles)){
-            return redirect(route('home'));
+            $roles = $user->roles->pluck('name')->toArray();
+            if (in_array('admin',$roles)){
+                return redirect(route('home'));
+            }
+            return redirect(route('front_home'));    
         }
-        return redirect(route('front_home'));
     }
 
 

@@ -33,14 +33,15 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $cmd = 'find '.public_path('uploads/videos/').' -path *.mp4 -type f | sort -rn | head -n 10';
         $latestVideos = explode("\n", substr(shell_exec($cmd), 0, -1));
         $latestVideos = $this->get_videos($latestVideos);
         $classes = Cl::all();
         $testimonials = Testimonial::all();
-        return view('front-end.home', compact('classes', 'testimonials', 'latestVideos'));
+        $response = compact('classes', 'testimonials', 'latestVideos');
+        return $request->expectsJson() ? response()->json($response) : view('front-end.home', $response);
     }
 
     private function get_videos($videos = []){

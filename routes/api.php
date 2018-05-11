@@ -17,9 +17,26 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
-    //    Route::resource('task', 'TasksController');
 
+Route::post('/signup', 'UserAuthController@sign_up_from_api');
+Route::post('/login', 'Auth\LoginController@authenticate');
+
+Route::group(['middleware' => 'auth:api'], function () {
+
+    Route::get('/classes', 'SchoolingController@classes');
+	Route::get('/class/{class}', 'SchoolingController@subjects');
+	Route::get('/class/{class}/{subject}', 'SchoolingController@chapters');
+	Route::get('/class/{class}/{subject}/{chapter}', 'SchoolingController@tutorials');
+	Route::get('/class/{class}/{subject}/{chapter}/{video}', 'SchoolingController@video');
+
+	Route::get('/exams', 'ExamsController@exams');
+	Route::get('/exams/{exam}', 'ExamsController@videos');
+	Route::get('/exams/{exam}/{video}', 'ExamsController@video');
+	Route::get('/chapters/{course_id}', 'ChallengeController@course_detail');
+
+	Route::get('/profile', 'UserAuthController@profile')->name('profile');
+    Route::post('/profile', 'UserAuthController@update_profile')->name('update_profile');
+		
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_api_routes
 });

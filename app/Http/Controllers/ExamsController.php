@@ -13,15 +13,16 @@ use App\Competetive_exam;
 use App\Http\Requests;
 use FFMpeg\FFMpeg;
 use FFMpeg\Coordinate\TimeCode;
+use Illuminate\Http\Request;
 
 class ExamsController{
 
-    public function exams(){
+    public function exams(Request $request){
         $exams = Competetive_exam::all();
-        return view('front-end.exams', compact('exams'));
+        return $request->expectsJson() ? response()->json($exams) : view('front-end.exams', compact('exams'));
     }
 
-    public function videos($examTitle){
+    public function videos(Request $request, $examTitle){
         //dd($classTitle, $subjectTitle, $chapterName);
         $videosPath = public_path("uploads/videos/competative/$examTitle");
         $videos = [];
@@ -29,7 +30,8 @@ class ExamsController{
             $videos = glob($videosPath.'/*.mp4');
         }
         $videos = $this->get_videos($videos);
-        return view('front-end.exam_videos', compact('videos', 'examTitle'));
+        $response = compact('videos', 'examTitle');
+        return $request->expectsJson() ? response()->json($response) : view('front-end.exam_videos', $response);
     }
     
     public function video($examName, $video){
@@ -54,6 +56,9 @@ class ExamsController{
             $lastSlashPos = strrpos($v[0],'/');
             $file_name = substr($v[0], $lastSlashPos+ 1);
             $videoFolderPath = substr($v[0],0, $lastSlashPos + 1);
+            if (!isset($v[1])){
+                abort(404);
+            }
             $ext = $v[1];
             if(!file_exists($videoFolderPath."$file_name.jpg")){
                 $ffmpeg = FFMpeg::create();
