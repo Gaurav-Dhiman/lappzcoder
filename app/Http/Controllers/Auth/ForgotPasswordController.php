@@ -85,7 +85,7 @@ class ForgotPasswordController extends Controller
      */
     public function showLinkRequestForm()
     {
-        return view('adminlte::auth.passwords.email');
+        return view('front-end.forgot_password');
     }
 
     /**

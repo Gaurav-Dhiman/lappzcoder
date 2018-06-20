@@ -7,10 +7,10 @@
 
 
         <div class="container">
-            <div class="row"><h1>Login</h1>
+            <div class="row"><h1>Forgot Password</h1>
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 breadcrumb">
                     <ul><li>Home /</li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Forgot Password</a></li>
                     </ul>
                 </div>
             </div>
@@ -23,6 +23,7 @@
 
         <div class="container">
             <div class="row">
+            
                 <div class="height30"></div>
                 <div class="height30"></div>
 
@@ -40,26 +41,38 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-xs-12 login-page">
-                    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h3>Enter your Username &amp; Password</h3></div>
-                    <form method="post" action="{{ route('front_login',$params)  }}" class="input-group">
-                        @if(Session::has('flash_message'))
-                            <div class="alert alert-danger"><p>{!! Session::get('flash_message')  !!} </p></div>
-                        @endif
-                        {{csrf_field()}}
+                    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h3>Forgot your Password ?</h3></div>
+                    <div class="height30"></div><div class="height30"></div>
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form method="post" action="{{ url('/password/email')}}" class="input-group">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="col-sm-12 col-xs-12 col-md-12">
                             <input type="email" name="email" value="{{old('email')}}"  placeholder="Enter Your Email">
-                        </div>
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <input type="password" name="password" placeholder="Enter Your Password">
                         </div>
                         <div class="col-sm-6 col-xs-12 col-md-6">
                             <!-- <input type="checkbox"><span>Remember Me </span> -->
                         </div>
                         <div class="col-sm-6 col-xs-12 col-md-6 text-right">
-                            <a href="{{ route('front_forgot_pw') }}">Forgot Password ?</a>
+                            <a href="{{ route('front_login') }}">Back to Login Page</a>
                         </div>
                         <div class="col-sm-12 col-md-12 col-xs-12">
-                            <button type="submit">Submit</button>
+                            <button type="submit">Reset Password</button>
                         </div>
                     </form>
                 </div>
