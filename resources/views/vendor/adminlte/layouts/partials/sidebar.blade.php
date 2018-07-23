@@ -33,14 +33,14 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="{{{ (Request::is('home') ? 'active' : '') }}}"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-th'></i> <span>Schooling</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li class="treeview">
                         <a href="#"><i class='fa fa-th'></i> <span>Classes</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/cls') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                            <li class="{{{ (Request::is('/admin/*') ? 'active' : '') }}}"><a href="{{ url('/admin/cls') }}"><i class="fa fa-circle-o"></i>List</a></li>
                             <li><a href="{{ url('/admin/cls/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
                         </ul>
                     </li>
@@ -65,8 +65,27 @@
             <li class="treeview">
                 <a href="#"><i class='fa fa-th'></i> <span>Competetive Exams</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('/admin/competetive_exams') }}"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="{{ url('/admin/competetive_exams/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
+                    <li class="treeview">
+                        <a href="#"><i class='fa fa-th'></i> <span>Exams</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ url('/admin/competetive_exams') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                            <li><a href="{{ url('/admin/competetive_exams/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class='fa fa-th'></i> <span>Subjects</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ url('/admin/exam_subjects') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                            <li><a href="{{ url('/admin/exam_subjects/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class='fa fa-th'></i> <span>Chapters</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ url('/admin/exam_chapters') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                            <li><a href="{{ url('/admin/exam_chapters/create') }}"><i class="fa fa-circle-o"></i>Add New</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
 

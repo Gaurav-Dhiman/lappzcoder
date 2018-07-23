@@ -56,7 +56,7 @@
                             <!-- <input type="checkbox"><span>Remember Me </span> -->
                         </div>
                         <div class="col-sm-6 col-xs-12 col-md-6 text-right">
-                            <a href="{{ route('front_forgot_pw') }}">Forgot Password ?</a>
+                            <a href="{{ url('password/reset') }}">Forgot Password ?</a>
                         </div>
                         <div class="col-sm-12 col-md-12 col-xs-12">
                             <button type="submit">Submit</button>

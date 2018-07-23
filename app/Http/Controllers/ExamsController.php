@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Competetive_exam;
+use App\Exam_subject;
 use App\Http\Requests;
 use FFMpeg\FFMpeg;
 use FFMpeg\Coordinate\TimeCode;
@@ -22,21 +23,32 @@ class ExamsController{
         return $request->expectsJson() ? response()->json($exams) : view('front-end.exams', compact('exams'));
     }
 
-    public function videos(Request $request, $examTitle){
+    public function subjects(Request $request, $examTitle){
+        $subjects = Competetive_exam::where('title', $examTitle)->firstOrFail()->subjects;
+        return $request->expectsJson() ? response()->json($subjects) : view('front-end.exam_subjects', compact('subjects', 'examTitle'));
+    }
+
+    public function chapters(Request $request, $examTitle, $subjectTitle){
+        $chapters = Competetive_exam::where('title', $examTitle)->firstOrFail()->subjects()->where('title', $subjectTitle)->firstOrFail()->chapters;
+        $response = compact('chapters', 'examTitle', 'subjectTitle');
+        return $request->expectsJson() ? response()->json($response) : view('front-end.exam_chapters', $response);
+    }
+
+    public function videos(Request $request, $examTitle , $subjectTitle, $chapterName){
         //dd($classTitle, $subjectTitle, $chapterName);
-        $videosPath = public_path("uploads/videos/competative/$examTitle");
+        $videosPath = public_path("uploads/videos/competative/$examTitle/$subjectTitle/$chapterName");
         $videos = [];
         if(file_exists($videosPath)){
             $videos = glob($videosPath.'/*.mp4');
         }
         $videos = $this->get_videos($videos);
-        $response = compact('videos', 'examTitle');
+        $response = compact('videos', 'examTitle', 'subjectTitle', 'chapterName');
         return $request->expectsJson() ? response()->json($response) : view('front-end.exam_videos', $response);
     }
     
-    public function video($examName, $video){
+    public function video(Request $request, $examName, $subjectTitle, $chapterName, $video){
         $allowed = True;
-        $videosPath = public_path("uploads/videos/competative/$examName");
+        $videosPath = public_path("uploads/videos/competative/$examName/$subjectTitle/$chapterName");
         $video = [$videosPath.'/'.$video];
         $videos = [];
         if(file_exists($videosPath)){

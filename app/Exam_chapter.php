@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Competetive_exam extends Model
+class Exam_chapter extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'competetive_exams';
+    protected $table = 'exam_chapters';
 
     /**
     * The database primary key value.
@@ -25,9 +25,16 @@ class Competetive_exam extends Model
      *
      * @var array
      */
-    protected $fillable = ['title'];
+    protected $fillable = ['title', 'exam_subject_id'];
 
-    public function subjects(){
-        return $this->hasMany(Exam_subject::class);
+
+    public function subject(){
+        return $this->belongsTo(Exam_subject::class, 'exam_subject_id');
     }
+
+//    public function cls(){
+//        return $this->subject()->cls();
+//    }
+
+    
 }

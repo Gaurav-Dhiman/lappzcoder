@@ -37,8 +37,10 @@ Route::get('/class/{class}/{subject}', 'SchoolingController@chapters')->name('ch
 Route::get('/class/{class}/{subject}/{chapter}', 'SchoolingController@tutorials')->name('tutorials');
 
 Route::get('/exams', 'ExamsController@exams')->name('exams');
-Route::get('/exams/{exam}', 'ExamsController@videos')->name('exam_videos');
-Route::get('/exams/{exam}/{video}', 'ExamsController@video')->name('exam_video');
+Route::get('/exams/{exam}', 'ExamsController@subjects')->name('exam_subjects');
+Route::get('/exams/{exam}/{subject}', 'ExamsController@chapters')->name('exam_chapters');
+Route::get('/exams/{exam}/{subject}/{chapter}', 'ExamsController@videos')->name('exam_videos');
+Route::get('/exams/{exam}/{subject}/{chapter}/{video}', 'ExamsController@video')->name('exam_video');
 Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('course_detail');
 
 // All post routes
@@ -77,6 +79,8 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'admin_access', 'prefix' =
     Route::resource('cls', 'ClsController');
     Route::resource('subjects', 'SubjectsController');
     Route::resource('chapters', 'ChaptersController');
+    Route::resource('exam_subjects', 'ExamSubjectsController');
+    Route::resource('exam_chapters', 'ExamChaptersController');
     Route::resource('competetive_exams', 'Competetive_examsController');
     Route::resource('test_series', 'Test_seriesController');
     Route::resource('testimonials', 'TestimonialsController');

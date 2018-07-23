@@ -17,9 +17,11 @@
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 breadcrumb">
                     <ul>
                         <li><a href="{{route('front_home')}}">Home</a> / </li>
-                        <li><a href="{{route('exams')}}">Competative</a> / </li>
-                        <li><a href="{{ route('exam_videos',$examName)}}">{{$examName}}</a> / </li>
-                        <li>{{ $video['title'] }}</li>
+                        <li><a href="{{route('exams')}}">Exams</a> / </li>
+                        <li><a href="{{route('exam_subjects', [$examTitle])}}">{{$examTitle}}</a> / </li>
+                        <li><a href="{{route('exam_chapters', [$examTitle, $subjectTitle])}}">{{$subjectTitle}}</a> / </li>
+                        <li><a href="{{route('exam_videos', [$examTitle, $subjectTitle, $chapterName])}}">{{$chapterName}} Videos</a> / </li>
+                        <li>{{$video}}</li>
                     </ul>
                 </div>
             </div>
