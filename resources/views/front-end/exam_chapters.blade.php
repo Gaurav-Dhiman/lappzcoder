@@ -20,12 +20,14 @@
     <div class="container-fluid service" style="border-bottom:0;">
         <div class="container">
             <div class="row">
-                @foreach($chapters  as $k=>$chapter)
+                @forelse($chapters  as $k=>$chapter)
                     <div class="col-sm-4 col-md-4 col-xs-12">
                         <img src="{{ asset('uploads/images/chapters/m'.(($k+1)%7).'.jpg') }}" alt="#">
                         <h2 class="class10" onclick="location.href = '{{ route('exam_videos', [ $examTitle, $subjectTitle, $chapter->title,  ]) }}'">{{ $chapter->title }}<span>  </span></h2>
                     </div>
-                @endforeach
+                @empty
+                    <div class="alert alert-info"><p>Sorry, there are no Chapters for this Subject yet! Please check again later.</p></div>
+                @endforelse
             </div>
         </div>
     </div>

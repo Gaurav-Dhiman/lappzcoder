@@ -18,12 +18,14 @@
     <div class="container-fluid service" style="border-bottom:0;">
         <div class="container">
             <div class="row">
-                @foreach($exams as $k=>$exam)
+                @forelse($exams as $k=>$exam)
                     <div class="col-sm-4 col-md-4 col-xs-12">
                         <img src="{{ asset('uploads/images/chapters/m'.(($k+1)%7).'.jpg') }}" alt="#">
                         <h2 class="class10" onclick="location.href = '{{ route('exam_subjects', [ $exam->title ]) }}'">{{ $exam->title }}<span>  </span></h2>
                     </div>
-                @endforeach
+                @empty
+                    <div class="alert alert-info"><p>Sorry, there are no Exams yet! Please check again later.</p></div>
+                @endforelse
             </div>
         </div>
     </div>

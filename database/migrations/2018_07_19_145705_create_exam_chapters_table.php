@@ -16,7 +16,7 @@ class CreateExamChaptersTable extends Migration
         Schema::create('exam_chapters', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('exam_subjects_id');
+            $table->integer('exam_subject_id');
             $table->timestamps();
         });
     }
