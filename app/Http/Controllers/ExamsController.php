@@ -58,7 +58,7 @@ class ExamsController{
         $videos = $this->get_videos($videos);
         // Get Main Video Details
         $video = $this->get_videos($video)[0];
-        return view('front-end.exam_video_detail', compact('video','videos', 'examName', 'videosPath', 'allowed'));
+        return view('front-end.exam_video_detail', compact('video','videos', 'examName', 'subjectTitle', 'chapterName', 'videosPath', 'allowed'));
     }
 
     private function get_videos($videos = []){
