@@ -58,7 +58,7 @@ class HomeController extends Controller
                 $ffmpeg = FFMpeg::create();
                 $video = $ffmpeg->open($filePath);
                 $video->frame(
-                    TimeCode::fromSeconds(2)
+                    TimeCode::fromSeconds(18)
                 )->save($videoFolderPath."$file_name.jpg");
             }
 
