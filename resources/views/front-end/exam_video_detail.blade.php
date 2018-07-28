@@ -21,7 +21,7 @@
                         <li><a href="{{route('exam_subjects', [$examName])}}">{{$examName}}</a> / </li>
                         <li><a href="{{route('exam_chapters', [$examName, $subjectTitle])}}">{{$subjectTitle}}</a> / </li>
                         <li><a href="{{route('exam_videos', [$examName, $subjectTitle, $chapterName])}}">{{$chapterName}} Videos</a> / </li>
-                        <li>{{$video}}</li>
+                        <li>{{$video['title']}}</li>
                     </ul>
                 </div>
             </div>
