@@ -18,9 +18,9 @@
                     <ul>
                         <li><a href="{{route('front_home')}}">Home</a> / </li>
                         <li><a href="{{route('exams')}}">Exams</a> / </li>
-                        <li><a href="{{route('exam_subjects', [$examTitle])}}">{{$examTitle}}</a> / </li>
-                        <li><a href="{{route('exam_chapters', [$examTitle, $subjectTitle])}}">{{$subjectTitle}}</a> / </li>
-                        <li><a href="{{route('exam_videos', [$examTitle, $subjectTitle, $chapterName])}}">{{$chapterName}} Videos</a> / </li>
+                        <li><a href="{{route('exam_subjects', [$examName])}}">{{$examName}}</a> / </li>
+                        <li><a href="{{route('exam_chapters', [$examName, $subjectTitle])}}">{{$subjectTitle}}</a> / </li>
+                        <li><a href="{{route('exam_videos', [$examName, $subjectTitle, $chapterName])}}">{{$chapterName}} Videos</a> / </li>
                         <li>{{$video}}</li>
                     </ul>
                 </div>
