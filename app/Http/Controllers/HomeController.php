@@ -65,6 +65,7 @@ class HomeController extends Controller
             $file_location_url = asset(substr($videoFolderPath,strpos($videoFolderPath,'uploads/'))).'/';
             $video_page_link = str_replace("uploads/videos/", "", $file_location_url).$file_name.'.'.$ext;
             $video_page_link = str_replace("schooling", "class", $video_page_link);
+            $video_page_link = str_replace("competative", "exams", $video_page_link);
 
             $videos[$k] = [
                 'file_path' => $file_location_url,

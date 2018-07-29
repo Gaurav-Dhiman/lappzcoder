@@ -40,7 +40,6 @@ Route::get('/exams', 'ExamsController@exams')->name('exams');
 Route::get('/exams/{exam}', 'ExamsController@subjects')->name('exam_subjects');
 Route::get('/exams/{exam}/{subject}', 'ExamsController@chapters')->name('exam_chapters');
 Route::get('/exams/{exam}/{subject}/{chapter}', 'ExamsController@videos')->name('exam_videos');
-Route::get('/exams/{exam}/{subject}/{chapter}/{video}', 'ExamsController@video')->name('exam_video');
 Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('course_detail');
 
 // All post routes
@@ -55,6 +54,7 @@ Route::group(['middleware' => 'login_required'], function () {
     #adminlte_routes
 
     Route::get('/class/{class}/{subject}/{chapter}/{video}', 'SchoolingController@video')->name('video');
+    Route::get('/exams/{exam}/{subject}/{chapter}/{video}', 'ExamsController@video')->name('exam_video');
     Route::get('/videos/{chapter_id}', 'ChallengeController@videos')->name('videos');
     Route::get('/profile', 'UserAuthController@profile')->name('profile');
     Route::post('/profile', 'UserAuthController@update_profile')->name('update_profile');
