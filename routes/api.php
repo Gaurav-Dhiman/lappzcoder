@@ -35,6 +35,12 @@ Route::group(['middleware' => 'auth:api'], function () {
 	Route::get('/exams/{exam}/{subject}', 'ExamsController@chapters');
 	Route::get('/exams/{exam}/{subject}/{chapter}', 'ExamsController@videos');
 	Route::get('/exams/{exam}/{subject}/{chapter}/{video}', 'ExamsController@video');
+
+
+	Route::get('/test_series', 'TestSeriesController@list');
+	Route::get('/test_series/{test_series}', 'TestSeriesController@detail');
+	Route::get('/test_series/{test_series}/{pdf}', 'TestSeriesController@download');
+
 	
 	Route::get('/chapters/{course_id}', 'ChallengeController@course_detail');
 

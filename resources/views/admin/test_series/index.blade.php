@@ -12,6 +12,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Test Series</div>
                     <div class="panel-body">
+                        @if(Session::has('flash_message'))
+                            <div class="alert alert-success"><p>{!! Session::get('flash_message')  !!} </p></div>
+                        @endif
                         <a href="{{ url('/admin/test_series/create') }}" class="btn btn-success btn-sm" title="Add New Test_series">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
@@ -33,13 +36,13 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Title</th><th>Actions</th>
+                                        <th>S.No</th><th>Title</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($test_series as $item)
+                                @foreach($test_series as $i=>$item)
                                     <tr>
-                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $i +1 }}</td>
                                         <td>{{ $item->title }}</td>
                                         <td>
                                             <a href="{{ url('/admin/test_series/' . $item->id) }}" title="View Test_series"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
@@ -53,7 +56,7 @@
                                                         'type' => 'submit',
                                                         'class' => 'btn btn-danger btn-xs',
                                                         'title' => 'Delete Test_series',
-                                                        'onclick'=>'return confirm("Confirm delete?")'
+                                                        'onclick'=>'return confirm("Are you sure you want to delete ?")'
                                                 )) !!}
                                             {!! Form::close() !!}
                                         </td>

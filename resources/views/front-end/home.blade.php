@@ -37,11 +37,11 @@
                 </div>
                 <div class="col-sm-4 col-md-4 col-xs-12">
                     <img src="{{ asset('front-end-assets/images/competative.jpg') }}" alt="#">
-                    <h2 class="competative" onclick="location.href = '{{ route('exams') }}'">Competetive <span>  </span></h2>
+                    <h2 class="competative" onclick="location.href = '{{ route('exams') }}'">Competitive Exams <span>  </span></h2>
                 </div>
                 <div class="col-sm-4 col-md-4 col-xs-12">
                     <img src="{{ asset('front-end-assets/images/series.jpg') }}" alt="#">
-                    <h2 class="series">Test Series <span> </span></h2>
+                    <h2 class="series" onclick="location.href = '{{ route('test_series') }}'">Test Series <span> </span></h2>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                                             <a href="{{ route('subjects',$class->title) }}">
                                                 <img src="{{ asset('uploads/images/classes/'.$class->title.'.jpg') }}" alt="#">
                                                 <span class="vedia-text">
-                                                    <strong class="vdlink" style="background:#1e90c5">VIDEO</strong><br>
+                                                    <!--<strong class="vdlink" style="background:#1e90c5">VIDEO</strong><br>-->
                                                     <p><strong>{{$class->title}} Class<br></strong>
                                                         TUTORIALS</p>
                                                 </span>
@@ -179,7 +179,7 @@
                 <div class="col-sm-12 col-md-12 col-xs-12">
                     <div class="jcarousel-wrapper">
                         <div class="jcarousel">
-                            <ul>
+                            <ul id="testimonials">
                                 @foreach($testimonials as $testimonial)
                                     <li>
                                         <div class="othersaybox-main">

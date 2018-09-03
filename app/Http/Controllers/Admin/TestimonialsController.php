@@ -66,7 +66,7 @@ class TestimonialsController extends Controller
         $requestData['image'] = $path;
         Testimonial::create($requestData);
 
-        Session::flash('flash_message', 'Testimonial added!');
+        Session::flash('flash_message', 'New Testimonial created successfully');
 
         return redirect('admin/testimonials');
     }
@@ -126,7 +126,7 @@ class TestimonialsController extends Controller
         }
         $testimonial->update($requestData);
 
-        Session::flash('flash_message', 'Testimonial updated!');
+        Session::flash('flash_message', 'Testimonial updated successfully');
 
         return redirect('admin/testimonials');
     }
@@ -142,7 +142,7 @@ class TestimonialsController extends Controller
     {
         Testimonial::destroy($id);
 
-        Session::flash('flash_message', 'Testimonial deleted!');
+        Session::flash('flash_message', 'Testimonial deleted successfully');
 
         return redirect('admin/testimonials');
     }

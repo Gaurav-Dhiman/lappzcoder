@@ -57,7 +57,7 @@ class Test_seriesController extends Controller
         
         Test_series::create($requestData);
 
-        Session::flash('flash_message', 'Test_series added!');
+        Session::flash('flash_message', 'New Test Series created successfully');
 
         return redirect('admin/test_series');
     }
@@ -108,7 +108,7 @@ class Test_seriesController extends Controller
         $test_series = Test_series::findOrFail($id);
         $test_series->update($requestData);
 
-        Session::flash('flash_message', 'Test_series updated!');
+        Session::flash('flash_message', 'Test Series updated successfully');
 
         return redirect('admin/test_series');
     }
@@ -124,7 +124,7 @@ class Test_seriesController extends Controller
     {
         Test_series::destroy($id);
 
-        Session::flash('flash_message', 'Test_series deleted!');
+        Session::flash('flash_message', 'Test Series deleted successfully');
 
         return redirect('admin/test_series');
     }

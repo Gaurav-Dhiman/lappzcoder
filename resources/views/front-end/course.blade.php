@@ -7,7 +7,7 @@
         <div class="row">
 
             <div class="container">
-                <h1>Class 10th Tutorials</h1>
+                <h1>Take a Challange</h1>
             </div>
 
 

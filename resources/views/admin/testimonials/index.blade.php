@@ -11,6 +11,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Testimonials</div>
                     <div class="panel-body">
+                        @if(Session::has('flash_message'))
+                            <div class="alert alert-success"><p>{!! Session::get('flash_message')  !!} </p></div>
+                        @endif
                         <a href="{{ url('/admin/testimonials/create') }}" class="btn btn-success btn-sm" title="Add New Testimonial">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
@@ -32,13 +35,16 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Name</th><th>Description</th><th>Actions</th>
+                                        <th>S.No</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($testimonials as $item)
+                                @foreach($testimonials as $i=>$item)
                                     <tr>
-                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $i +1 }}</td>
                                         <td>{{ $item->name }}</td><td>{{ $item->description }}</td>
                                         <td>
                                             <a href="{{ url('/admin/testimonials/' . $item->id) }}" title="View Testimonial"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
@@ -52,7 +58,7 @@
                                                         'type' => 'submit',
                                                         'class' => 'btn btn-danger btn-xs',
                                                         'title' => 'Delete Testimonial',
-                                                        'onclick'=>'return confirm("Confirm delete?")'
+                                                        'onclick'=>'return confirm("Are you sure you want to delete ?")'
                                                 )) !!}
                                             {!! Form::close() !!}
                                         </td>

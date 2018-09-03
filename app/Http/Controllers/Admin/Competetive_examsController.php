@@ -57,7 +57,7 @@ class Competetive_examsController extends Controller
         
         Competetive_exam::create($requestData);
 
-        Session::flash('flash_message', 'Competetive_exam added!');
+        Session::flash('flash_message', 'A new Competetive Exam has been created sucessfully');
 
         return redirect('admin/competetive_exams');
     }
@@ -108,7 +108,7 @@ class Competetive_examsController extends Controller
         $competetive_exam = Competetive_exam::findOrFail($id);
         $competetive_exam->update($requestData);
 
-        Session::flash('flash_message', 'Competetive_exam updated!');
+        Session::flash('flash_message', 'Competetive Exam updated sucessfully');
 
         return redirect('admin/competetive_exams');
     }
@@ -124,7 +124,7 @@ class Competetive_examsController extends Controller
     {
         Competetive_exam::destroy($id);
 
-        Session::flash('flash_message', 'Competetive_exam deleted!');
+        Session::flash('flash_message', 'Competetive Exam deleted sucessfully');
 
         return redirect('admin/competetive_exams');
     }

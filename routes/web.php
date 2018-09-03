@@ -44,6 +44,10 @@ Route::get('/chapters/{course_id}', 'ChallengeController@course_detail')->name('
 
 // All post routes
 
+Route::get('/test_series', 'TestSeriesController@list')->name('test_series');
+Route::get('/test_series/{test_series}', 'TestSeriesController@detail')->name('test_series_detail');
+Route::get('/test_series/{test_series}/{pdf}', 'TestSeriesController@download')->name('test_series_download');
+
 
 Route::group(['middleware' => 'login_required'], function () {
     //    Route::get('/link1', function ()    {

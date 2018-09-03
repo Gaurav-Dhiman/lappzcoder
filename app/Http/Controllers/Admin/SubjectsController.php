@@ -63,7 +63,7 @@ class SubjectsController extends Controller
         
         Subject::create($requestData);
 
-        Session::flash('flash_message', 'Subject added!');
+        Session::flash('flash_message', 'New Subject created successfully');
 
         return redirect('admin/subjects');
     }
@@ -114,7 +114,7 @@ class SubjectsController extends Controller
         $subject = Subject::findOrFail($id);
         $subject->update($requestData);
 
-        Session::flash('flash_message', 'Subject updated!');
+        Session::flash('flash_message', 'Subject updated successfully');
 
         return redirect('admin/subjects');
     }
@@ -130,7 +130,7 @@ class SubjectsController extends Controller
     {
         Subject::destroy($id);
 
-        Session::flash('flash_message', 'Subject deleted!');
+        Session::flash('flash_message', 'Subject deleted successfully');
 
         return redirect('admin/subjects');
     }

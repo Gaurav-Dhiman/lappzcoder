@@ -50,12 +50,14 @@ class ClsController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request, [
+            'title' => 'required'
+        ]);
         $requestData = $request->all();
         
         Cl::create($requestData);
 
-        Session::flash('flash_message', 'Cl added!');
+        Session::flash('flash_message', 'New Class has been added successfully');
 
         return redirect('admin/cls');
     }
@@ -104,7 +106,7 @@ class ClsController extends Controller
         $cl = Cl::findOrFail($id);
         $cl->update($requestData);
 
-        Session::flash('flash_message', 'Cl updated!');
+        Session::flash('flash_message', 'Class updated successfully');
 
         return redirect('admin/cls');
     }
@@ -120,7 +122,7 @@ class ClsController extends Controller
     {
         Cl::destroy($id);
 
-        Session::flash('flash_message', 'Cl deleted!');
+        Session::flash('flash_message', 'Class deleted successfully');
 
         return redirect('admin/cls');
     }

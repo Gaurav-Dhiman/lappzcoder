@@ -63,7 +63,7 @@ class ExamSubjectsController extends Controller
         
         Exam_subject::create($requestData);
 
-        Session::flash('flash_message', 'Subject added!');
+        Session::flash('flash_message', 'New Subject has been created successfully');
 
         return redirect('admin/exam_subjects');
     }
@@ -114,7 +114,7 @@ class ExamSubjectsController extends Controller
         $subject = Exam_subject::findOrFail($id);
         $subject->update($requestData);
 
-        Session::flash('flash_message', 'Subject updated!');
+        Session::flash('flash_message', 'Subject updated successfully');
 
         return redirect('admin/exam_subjects');
     }
@@ -130,7 +130,7 @@ class ExamSubjectsController extends Controller
     {
         Exam_subject::destroy($id);
 
-        Session::flash('flash_message', 'Subject deleted!');
+        Session::flash('flash_message', 'Subject deleted successfully.');
 
         return redirect('admin/exam_subjects');
     }

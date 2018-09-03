@@ -40,10 +40,19 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-xs-12 login-page">
-                    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h3>Enter your Username &amp; Password</h3></div>
+                    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h3>Enter your Email &amp; Password</h3></div>
                     <form method="post" action="{{ route('front_login',$params)  }}" class="input-group">
                         @if(Session::has('flash_message'))
                             <div class="alert alert-danger"><p>{!! Session::get('flash_message')  !!} </p></div>
+                        @endif
+                         @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         @endif
                         {{csrf_field()}}
                         <div class="col-sm-12 col-xs-12 col-md-12">

@@ -51,7 +51,7 @@
                 <a href="#"><img src="{{ asset('front-end-assets/images/app-store.png') }}" alt="#"></a>
             </div>
             <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 text-center">
-                <p>Copyright © 2017 all rights reserved. guru gyan mantra</p></div>
+                <p>Copyright © 2017 Guru Gyan Mantra. All Rights Reserved.</p></div>
         </div>
     </div>
 </div>

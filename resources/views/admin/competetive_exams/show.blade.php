@@ -1,6 +1,6 @@
 @extends('adminlte::layouts.app')
 
-@section('contentheader_title', 'Competetive Exams')
+@section('contentheader_title', 'Competitive Exams')
 @section('contentheader_description', 'List Record')
 
 @section('main-content')
@@ -9,7 +9,7 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Competetive Exam {{ $competetive_exam->id }}</div>
+                    <div class="panel-heading">Competitive Exam {{ $competetive_exam->id }}</div>
                     <div class="panel-body">
 
                         <a href="{{ url('admin/competetive_exams') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>

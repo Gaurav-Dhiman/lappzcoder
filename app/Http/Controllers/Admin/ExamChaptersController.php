@@ -79,7 +79,7 @@ class ExamChaptersController extends Controller
         
         Exam_chapter::create($requestData);
 
-        Session::flash('flash_message', 'Chapter added!');
+        Session::flash('flash_message', 'A new Chapter has been created successfully !');
 
         return redirect('admin/exam_chapters');
     }
@@ -138,7 +138,7 @@ class ExamChaptersController extends Controller
         $chapter = Exam_chapter::findOrFail($id);
         $chapter->update($requestData);
 
-        Session::flash('flash_message', 'Chapter updated!');
+        Session::flash('flash_message', 'Chapter updated successfully');
 
         return redirect('admin/exam_chapters');
     }
@@ -154,7 +154,7 @@ class ExamChaptersController extends Controller
     {
         Exam_chapter::destroy($id);
 
-        Session::flash('flash_message', 'Chapter deleted!');
+        Session::flash('flash_message', 'Chapter deleted successfully');
 
         return redirect('admin/exam_chapters');
     }

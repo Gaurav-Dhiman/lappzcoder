@@ -404,7 +404,7 @@ h1, h2, h3, h4, h5, h6 {
 .right-btn span{    float: left;
     width: 47px;
     margin: 75px 0 0 -51px;}
-.rightbox{position:relative;top:0;float:left;width:0;overflow:hidden;transition:all 0.5s ease;height:426px}
+.rightbox{position:relative;top:-40px;float:left;width:0;overflow:hidden;transition:all 0.5s ease;height:490px}
 .rightbox ul{    top: 0px;
     z-index: 999;
     overflow: hidden;
@@ -844,9 +844,9 @@ Dropdown css
 
 	.customNavigation .fa{position:absolute; top:-28px; font-size:30px; cursor:pointer;height:23px;width:23px;}
 
-	.customNavigation .fa-angle-left{right:6px;background:url(../images/previus.jpg) no-repeat}
+	.customNavigation .fa-angle-left{right:6px;/*background:url(../images/previus.jpg) no-repeat*/}
 
-		.customNavigation .fa-angle-right{right:-20px;background:url(../images/next.jpg) no-repeat}
+		.customNavigation .fa-angle-right{right:-20px;/*background:url(../images/next.jpg) no-repeat*/}
 		.heading{font-size:30px;text-align:center;color:#333;}
 		.vedia-text p{font-size: 22px;
     color: #fff;
@@ -899,3 +899,5 @@ Dropdown css
 .social-link li a:hover{padding:0 0;}
 .social-link li:nth-child(1) a:hover{background: #3b5998;}
 .social-link li a:hover .fa{color:#fff;}
+
+ul#testimonials li .othersaybox-main a{cursor: auto;}

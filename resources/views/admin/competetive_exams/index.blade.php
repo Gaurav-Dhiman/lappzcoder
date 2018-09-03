@@ -8,8 +8,11 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Competetive Exam </div>
+                    <div class="panel-heading">Competitive Exam </div>
                     <div class="panel-body">
+                        @if(Session::has('flash_message'))
+                            <div class="alert alert-success"><p>{!! Session::get('flash_message')  !!} </p></div>
+                        @endif
                         <a href="{{ url('admin/competetive_exams/create') }}" class="btn btn-success btn-sm" title="Add New Competetive_exam">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
@@ -31,13 +34,13 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Title</th><th>Actions</th>
+                                        <th>S.No</th><th>Title</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($competetive_exams as $item)
+                                @foreach($competetive_exams as $i=>$item)
                                     <tr>
-                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $i+1 }}</td>
                                         <td>{{ $item->title }}</td>
                                         <td>
                                             <a href="{{ url('admin/competetive_exams/' . $item->id) }}" title="View Competetive_exam"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
@@ -51,7 +54,7 @@
                                                         'type' => 'submit',
                                                         'class' => 'btn btn-danger btn-xs',
                                                         'title' => 'Delete Competetive_exam',
-                                                        'onclick'=>'return confirm("Confirm delete?")'
+                                                       'onclick'=>'return confirm("Are you sure you want to delete ?")'
                                                 )) !!}
                                             {!! Form::close() !!}
                                         </td>

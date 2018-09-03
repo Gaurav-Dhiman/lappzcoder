@@ -79,7 +79,7 @@ class ChaptersController extends Controller
         
         Chapter::create($requestData);
 
-        Session::flash('flash_message', 'Chapter added!');
+        Session::flash('flash_message', 'New Chapter has been created sucessfully.');
 
         return redirect('admin/chapters');
     }
@@ -138,7 +138,7 @@ class ChaptersController extends Controller
         $chapter = Chapter::findOrFail($id);
         $chapter->update($requestData);
 
-        Session::flash('flash_message', 'Chapter updated!');
+        Session::flash('flash_message', 'Chapter updated sucessfully');
 
         return redirect('admin/chapters');
     }
@@ -154,7 +154,7 @@ class ChaptersController extends Controller
     {
         Chapter::destroy($id);
 
-        Session::flash('flash_message', 'Chapter deleted!');
+        Session::flash('flash_message', 'Chapter deleted sucessfully');
 
         return redirect('admin/chapters');
     }
